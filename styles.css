@@ -69,9 +69,10 @@ img {
     margin: 0.5%;
 }
 
-.bento-box:has(.bento) {
+/* With : Too much height; Without : Too much width */
+/* .bento-box:has(.bento) {
     flex-basis: 0;
-}
+} */
 
 ::selection {
     background-color: #FF00F0;
