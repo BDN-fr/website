@@ -1,0 +1,6 @@
+.resizable {
+    resize: both;
+    overflow: auto;
+    min-height: fit-content;
+    min-height: min-content;
+}

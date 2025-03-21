@@ -1,0 +1,21 @@
+.bento {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    /* flex-grow: 1; */
+}
+
+.bento-box {
+    border-radius: 15px;
+    flex-grow: 1;
+    padding: 1%;
+    margin: 0.5%;
+}
+
+/* With : Too much height; Without : Too much width */
+/* .bento-box:has(.bento) {
+    flex-basis: 0;
+} */
