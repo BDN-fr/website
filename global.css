@@ -3,6 +3,10 @@
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
+    * {
+        text-align: center;
+    }
 }
 
 .v-centered {
@@ -15,6 +19,10 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+
+    * {
+        text-align: center;
+    }
 }
 
 body {
