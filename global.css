@@ -1,25 +1,32 @@
 .fully-centered {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .v-centered {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .h-centered {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 body {
     background-color: #1a1a1a;
+    margin: 0;
+}
+
+.content {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 0;
+    min-height: 100vh;
 }
 
 input, button {
@@ -51,6 +58,37 @@ h1, h2, h3, a, p, label, li, span {
     color: white;
 }
 
+a {
+    text-decoration: underline #FF00F0;
+}
+a:hover {
+    background-color: #FF00F0;
+    transform: scale3d(20px);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: #5353537b;
+    height: max-content;
+    padding: 1em;
+    width: max-content;
+    position: fixed;
+    border-bottom-right-radius: 15px;
+    border-bottom: #ffffff solid 1px;
+    border-right: #ffffff solid 1px;
+}
+
+footer {
+    width: 100%;
+    background-color: black;
+    margin-top: 5em;
+    border-top: #ffffff solid 1px;
+    height: 100%;
+    min-height: 200px;
+}
+
 img {
     max-height: 100%;
     max-width: 100%;
@@ -60,8 +98,13 @@ img {
 .icon {
     max-height: 80px;
     max-width: 80px;
-    height: auto;
-    width: auto;
+}
+
+.avatar {
+    max-height: 80px;
+    max-width: 80px;
+    border: #ffffff solid 2px;
+    border-radius: 25px;
 }
 
 ::selection {
