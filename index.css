@@ -10,3 +10,6 @@
 #host {
     margin-top: 0;
 }
+#host:hover {
+    transform: scale(1.5);
+}
