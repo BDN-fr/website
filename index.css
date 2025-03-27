@@ -9,6 +9,7 @@
 
 #host {
     margin-top: 0;
+    transition: transform 0.3s ease-out;
 }
 #host:hover {
     transform: scale(1.5);
