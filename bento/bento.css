@@ -16,6 +16,6 @@
 }
 
 /* With : Too much height; Without : Too much width */
-/* .bento-box:has(.bento) {
+.bento-box:has(.bento) {
     flex-basis: 0;
-} */
+}
