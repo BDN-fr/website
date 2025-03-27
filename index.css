@@ -1,4 +1,12 @@
-#welcome-title {
+.title {
     font-size: 3em;
     text-align: center;
+}
+
+#welcome {
+    margin-bottom: 0;
+}
+
+#host {
+    margin-top: 0;
 }
