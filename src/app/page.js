@@ -8,6 +8,7 @@ export default async function Home() {
         <main>
             <h1 id="welcome" className="title">Welcome to</h1>
             <a href="/" id="host" className="title"><i>{host}</i></a>
+            <p>Testing if this commit is automaticly built</p>
         </main>
     );
 }
