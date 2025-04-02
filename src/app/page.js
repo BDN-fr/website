@@ -1,7 +1,5 @@
 import './page.css'
 
-import { MouseFollowingGradient } from '@/components/mouseFollowingGradient'
-
 import { headers } from 'next/headers';
 
 async function WelcomeTitle() {
@@ -20,8 +18,8 @@ async function WelcomeTitle() {
 
 function QuestionDiv({ question, children }) {
     return (
-        <div className='bordered bg-blur question'>
-            <h2>{question}</h2>
+        <div className='bordered question'>
+            <h2 style={{marginTop: 0}}>{question}</h2>
             {children}
         </div>
     )
@@ -31,7 +29,6 @@ export default function Home() {
     return (
         <main>
             <WelcomeTitle/>
-            <MouseFollowingGradient/>
             <div className='content' style={{width: '80%'}}>
                 <img src='/img/pfp.png' className='avatar'/>
                 <h1>About me</h1>
@@ -39,10 +36,10 @@ export default function Home() {
                 <QuestionDiv question='Who am i ?'>
                     <p>I am BDN_fr, a french 16yo girl who like coding things.</p>
                 </QuestionDiv>
-                {/* <QuestionDiv question='long test...'>
+                <QuestionDiv question='long test...'>
                     <p>This is a looong response, only to check how the css will react to that...
                         React like the framework used to make this website, it's Next.js but... Yeah... It's long enough</p>
-                </QuestionDiv> */}
+                </QuestionDiv>
             </div>
         </main>
     );

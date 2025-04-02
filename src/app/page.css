@@ -25,7 +25,12 @@
 .question {
     width: 100%;
     margin-bottom: 2em;
+    transition: transform 0.2s;
+
     * {
         text-align: center;
     }
+}
+.question:hover {
+    transform: scale(1.05);
 }

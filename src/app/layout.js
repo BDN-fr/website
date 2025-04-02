@@ -3,8 +3,9 @@ export const metadata = {
   description: 'jk this website is just shitty',
 };
 
-import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { MouseFollowingGradient } from '@/components/mouseFollowingGradient'
 
 import '@/global.css'
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         {/* <Header/> */}
+        <MouseFollowingGradient/>
         {children}
         <Footer/>
       </body>

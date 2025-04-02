@@ -46,9 +46,7 @@ body {
     padding-right: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
-}
-
-.bg-blur {
+    background-color: #00000042;
     backdrop-filter: blur(1rem);
 }
 
