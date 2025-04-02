@@ -1,3 +1,15 @@
+body {
+    background-color: #1a1a1a;
+    margin: 0;
+}
+
+.content, main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .fully-centered {
     display: flex;
     align-items: center;
@@ -12,29 +24,19 @@
 .v-centered {
     display: flex;
     align-items: center;
+    flex-direction: row;
     flex-wrap: wrap;
 }
 
 .h-centered {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
 
     * {
         text-align: center;
     }
-}
-
-body {
-    background-color: #1a1a1a;
-    margin: 0;
-}
-
-.content, main {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 input, button {
