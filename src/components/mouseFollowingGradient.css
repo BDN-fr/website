@@ -13,3 +13,9 @@
     transform: translate(-50%, -50%);
     z-index: -1;
 }
+
+@media (pointer: coarse) {
+    #mouse-following-gradient {
+        display: none;
+    }
+}

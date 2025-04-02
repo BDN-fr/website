@@ -33,6 +33,7 @@ export default function Home() {
             <WelcomeTitle/>
             <MouseFollowingGradient/>
             <div className='content' style={{width: '80%'}}>
+                <img src='/img/pfp.png' className='avatar'/>
                 <h1>About me</h1>
                 {/* TODO: Change this shitty look */}
                 <QuestionDiv question='Who am i ?'>
