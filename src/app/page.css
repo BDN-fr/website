@@ -18,4 +18,11 @@
     background-image: url('/img/background.png');
     background-size: cover;
     background-position: center;
+    border-bottom: white solid 1px;
+    margin-bottom: 3em;
+}
+
+.question {
+    width: 100%;
+    margin-bottom: 2em;
 }

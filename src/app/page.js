@@ -1,5 +1,7 @@
 import './page.css'
 
+import { MouseFollowingGradient } from '@/components/mouseFollowingGradient'
+
 import { headers } from 'next/headers';
 
 async function WelcomeTitle() {
@@ -16,12 +18,30 @@ async function WelcomeTitle() {
     )
 }
 
+function QuestionDiv({ question, children }) {
+    return (
+        <div className='bordered bg-blur question'>
+            <h2>{question}</h2>
+            {children}
+        </div>
+    )
+}
+
 export default function Home() {
     return (
         <main>
             <WelcomeTitle/>
-            <div className='fully-centered' style={{backgroundColor: 'red', width:'100%', height:'12em'}}>
-                <p>coucou</p>
+            <MouseFollowingGradient/>
+            <div className='content' style={{width: '80%'}}>
+                <h1>About me</h1>
+                {/* TODO: Change this shitty look */}
+                <QuestionDiv question='Who am i ?'>
+                    <p>I am BDN_fr, a french 16yo girl who like coding things.</p>
+                </QuestionDiv>
+                {/* <QuestionDiv question='long test...'>
+                    <p>This is a looong response, only to check how the css will react to that...
+                        React like the framework used to make this website, it's Next.js but... Yeah... It's long enough</p>
+                </QuestionDiv> */}
             </div>
         </main>
     );

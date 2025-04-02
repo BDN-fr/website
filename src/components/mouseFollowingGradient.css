@@ -1,0 +1,15 @@
+#mouse-following-gradient {
+    /* background: radial-gradient(#5BCFFF, #ffffff00); */
+    /* background: radial-gradient(circle at 50%, #ffffff 0%, #00000000 30%); */
+    /* filter: blur(0.1rem); */
+    /* background-color: #5BCFFF; */
+    border: #ffffff solid 2px;
+    height: 5vh;
+    width: 5vh;
+
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
