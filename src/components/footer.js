@@ -8,7 +8,7 @@ export function Footer() {
                 <h2>A website by BDN_fr</h2>
             </div>
             <div className="h-centered" style={{flexGrow: 1}}>
-                <p>This website is not open source for now</p>
+                <p>This website is open source, <a href="https://github.com/BDN-fr/website">here is the link</a></p>
             </div>
         </footer>
     );
