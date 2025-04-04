@@ -26,6 +26,7 @@
     width: 100%;
     margin-bottom: 2em;
     transition: transform 0.2s;
+    z-index: 2;
 
     * {
         text-align: center;

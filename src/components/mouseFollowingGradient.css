@@ -1,17 +1,19 @@
 #mouse-following-gradient {
     /* background: radial-gradient(#5BCFFF, #ffffff00); */
     /* background: radial-gradient(circle at 50%, #ffffff 0%, #00000000 30%); */
-    /* filter: blur(0.1rem); */
+    /* background: radial-gradient(circle at 50%, #5BCFFF 0%, #FFAFCF 40%, #ffffff 80%); */
+    background: radial-gradient(#00000000 30%, #ffffff74 49%, #ffffff 50%, #ffffff74 51%, #00000000 70%);
+    /* filter: blur(0.3rem); */
     /* background-color: #5BCFFF; */
-    border: #ffffff solid 2px;
-    height: 5vh;
-    width: 5vh;
+    /* border: #ffffff solid 2px; */
+    height: 7vw;
+    width: 7vw;
 
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     transform: translate(-50%, -50%);
-    z-index: -1;
+    z-index: 1;
 }
 
 @media (pointer: coarse) {

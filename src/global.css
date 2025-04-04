@@ -80,10 +80,10 @@ h1, h2, h3, a, p, label, li, span {
 }
 
 a {
-    text-decoration: underline #FF00F0;
+    text-decoration: underline #5BCFFF;
 }
 a:hover {
-    background-color: #FF00F0;
+    background-color: #5BCFFF;
 }
 
 header {
