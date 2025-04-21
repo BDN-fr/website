@@ -7,7 +7,7 @@ const socials = [
     {'name':'Discord', 'link':'https://discord.com/users/704593833421438996', 'icon':'discord.svg', 'note':'If discord\'s user shitty feature bug, my username is "bdn_fr"'},
     {'name':'Steam', 'link':'https://steamcommunity.com/id/BDN_fr', 'icon':'steam.svg'},
     {'name':'Instagram', 'link':'https://www.instagram.com/bdn_fr', 'icon':'instagram.svg', 'note':'I\'m quite inactive'},
-    {'name':'Youtube', 'link':'https://youtube.com/@bdn_fr', 'icon':'youtube.svg', 'note':'I shitpost sometimes'},
+    {'name':'Youtube', 'link':'https://youtube.com/@modo_discord', 'icon':'youtube.svg', 'note':'I shitpost sometimes'},
     {'name':'Twitch', 'link':'https://twitch.tv/bdn_fr', 'icon':'twitch.svg', 'note':'I don\'t stream'},
     {'name':'Matrix', 'link':'https://matrix.to/#/@bdn_fr:private.coffee', 'icon':'matrix.svg', 'note':'I\'m realy inactive for now'},
     {'name':'Minecraft', 'link':'https://namemc.com/profile/d2c51d90-b318-4e4d-a8ad-36decb707bbb', 'icon':'minecraft.svg', 'note':'This is not a social network at all x)'},
