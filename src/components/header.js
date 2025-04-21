@@ -1,7 +1,8 @@
 export function Header() {
     return (
         <header className="fully-centered">
-            <p>This is a header</p>
+            <a href="/">Homepage</a>
+            <a href="/socials">Socials</a>
         </header>
     )
 };

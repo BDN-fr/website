@@ -18,7 +18,7 @@ async function WelcomeTitle() {
 
 function QuestionDiv({ question, children }) {
     return (
-        <div className='bordered question'>
+        <div className='bordered question zoom-on-hover'>
             <h2 style={{marginTop: 0}}>{question}</h2>
             {children}
         </div>
@@ -32,13 +32,14 @@ export default function Home() {
             <div className='content' style={{width: '80%'}}>
                 <img src='/img/pfp.png' className='avatar'/>
                 <h1>About me</h1>
-                {/* TODO: Change this shitty look */}
                 <QuestionDiv question='Who am i ?'>
-                    <p>I am BDN_fr, a french 16yo girl who like coding things.</p>
+                    <p>I am BDN, a french 16yo girl who like coding things. I also like playing video games especially indie ones.</p>
                 </QuestionDiv>
-                <QuestionDiv question='long test...'>
-                    <p>This is a looong response, only to check how the css will react to that...
-                        React like the framework used to make this website, it's Next.js but... Yeah... It's long enough</p>
+                <QuestionDiv question="My socials">
+                    <p>See the <a href='/socials'>dedicated page</a></p>
+                </QuestionDiv>
+                <QuestionDiv>
+                    <p>More content will be added later, if I ideas of what to add</p>
                 </QuestionDiv>
             </div>
         </main>

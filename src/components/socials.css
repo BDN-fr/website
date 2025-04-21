@@ -1,0 +1,10 @@
+.social {
+    margin:0.5em;
+    min-height:fit-content;
+    min-width:fit-content;
+    cursor: pointer;
+    padding-top:0;
+    padding-bottom:0;
+    flex-grow: 1;
+    flex-basis: 1;
+}
