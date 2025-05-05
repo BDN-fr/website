@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import './404.css'
+import './not-found.css'
 
 export default function Page() {
     useEffect(() => {
@@ -29,7 +29,7 @@ export default function Page() {
             var bodyBCR = document.body.getBoundingClientRect()
             var [newX, newY] = [e.clientX - diffX, e.clientY - diffY + scrollY]
             if (divBCR.right >= bodyBCR.width) {
-                newX = bodyBCR.width - divBCR.width
+                newX = bodyBCR.width - divBCR.width - 0.1
             }
             if (newX < 0) {
                 newX = 0
@@ -50,9 +50,10 @@ export default function Page() {
         <main className="fully-centered">
             <div className="bordered" id='message'>
                 <h1>404</h1>
-                <h1>Oops... You're lost !</h1>
-                <p>No problem, there is a cat picture for you</p>
-                <h2>Here is the <a href="/">Homepage</a></h2>
+                <p>Oops... You're lost... <br/>
+                but you found a cat picture !</p>
+                <p><a href="/">Homepage</a></p>
+                <p><a href=''>Refresh the page<br/>(you will have another cat)</a></p>
             </div>
         </main>
     )
