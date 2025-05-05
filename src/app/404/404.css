@@ -1,0 +1,14 @@
+body {
+    background-image: url('https://cataas.com/cat');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow-x: hidden;
+}
+
+#message {
+    position: absolute;
+    cursor: move;
+    width: max-content;
+    overflow: hidden;
+}
