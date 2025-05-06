@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://cataas.com/cat');
+    /* background-image: url('https://cataas.com/cat'); Moved into the page for avoid image caching*/
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

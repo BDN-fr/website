@@ -5,6 +5,20 @@ import './not-found.css'
 
 export default function Page() {
     useEffect(() => {
+
+        fetch('https://cataas.com/cat', {
+            "cache": "no-cache"
+        }).then(res => {
+            res.blob().then(blob => {
+                var reader = new FileReader()
+                reader.readAsDataURL(blob)
+                reader.onloadend = () => {
+                    var b64 = reader.result
+                    document.body.style.backgroundImage = `url(${b64})`
+                }
+            })
+        })
+
         var [diffX, diffY] = [0, 0]
 
         // Made with the help of this post https://stackoverflow.com/a/9334106
@@ -14,6 +28,8 @@ export default function Page() {
 
         function mouseUp() {
             window.removeEventListener('mousemove', divMove, true)
+            var divBCR = document.getElementById('message').getBoundingClientRect()
+            fixCoords(divBCR.x, divBCR.y + scrollY)
         }
 
         function mouseDown(e) {
@@ -24,19 +40,22 @@ export default function Page() {
         }
 
         function divMove(e){
+            fixCoords(e.clientX - diffX, e.clientY - diffY + scrollY)
+        }
+
+        function fixCoords(oldX, oldY) {
             var div = document.getElementById('message')
             var divBCR = document.getElementById('message').getBoundingClientRect()
             var bodyBCR = document.body.getBoundingClientRect()
-            var [newX, newY] = [e.clientX - diffX, e.clientY - diffY + scrollY]
+            var [newX, newY] = [oldX, oldY]
             if (divBCR.right >= bodyBCR.width) {
                 newX = bodyBCR.width - divBCR.width - 0.1
             }
             if (newX < 0) {
                 newX = 0
             }
-            console.log(bodyBCR.bottom)
             if (divBCR.bottom >= bodyBCR.bottom) {
-                newY = bodyBCR.height - divBCR.height
+                newY = bodyBCR.height - divBCR.height - 0.1
             }
             if (newY < 0) {
                 newY = 0
