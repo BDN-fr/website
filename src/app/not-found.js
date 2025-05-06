@@ -15,6 +15,7 @@ export default function Page() {
                 reader.onloadend = () => {
                     var b64 = reader.result
                     document.body.style.backgroundImage = `url(${b64})`
+                    document.getElementById('message').classList.add('message-animation')
                 }
             })
         })
@@ -66,8 +67,8 @@ export default function Page() {
     })
 
     return (
-        <main className="fully-centered">
-            <div className="bordered" id='message'>
+        <main className="h-centered">
+            <div className="bordered" id='message' style={{top:'5px'}}>
                 <h1>404</h1>
                 <p>Oops... You're lost... <br/>
                 but you found a cat picture !</p>
