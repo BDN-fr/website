@@ -20,6 +20,10 @@ export default function Page() {
             })
         })
 
+        setTimeout(() => {
+            document.getElementById('move-icon').classList.add('disapear')
+        }, 5000)
+
         var [diffX, diffY] = [0, 0]
 
         // Made with the help of this post https://stackoverflow.com/a/9334106
@@ -68,7 +72,8 @@ export default function Page() {
 
     return (
         <main className="h-centered">
-            <div className="bordered" id='message' style={{top:'5px'}}>
+            <div className="bordered no-select" id='message' style={{top:'5px'}}>
+                <div id='move-icon'></div>
                 <h1>404</h1>
                 <p>Oops... You're lost... <br/>
                 but you found a cat picture !</p>
