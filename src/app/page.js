@@ -38,6 +38,9 @@ export default function Home() {
                 <QuestionDiv question="My socials">
                     <p>See the <a href='/socials'>dedicated page</a></p>
                 </QuestionDiv>
+                <QuestionDiv question="My projects">
+                    <p>See the <a href='/projects'>dedicated page</a></p>
+                </QuestionDiv>
                 <QuestionDiv>
                     <p>More content will be added later, if I ideas of what to add</p>
                 </QuestionDiv>
