@@ -42,7 +42,7 @@ export default function Home() {
                     <p>See the <a href='/projects'>dedicated page</a></p>
                 </QuestionDiv>
                 <QuestionDiv>
-                    <p>More content will be added later, if I ideas of what to add</p>
+                    <p>More content will be added later, if I have any ideas of what to add</p>
                 </QuestionDiv>
             </div>
         </main>
