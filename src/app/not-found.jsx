@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import './not-found.css'
 import MovingMessageBox from '@/components/MovingMessageBox'
 
 export default function Page() {
@@ -21,7 +22,7 @@ export default function Page() {
     })
 
     return (
-        <main className="h-centered background-image">
+        <main className="h-centered">
             <MovingMessageBox top='5px'>
                 <h1>404</h1>
                 <p>Oops... You're lost... <br/>
