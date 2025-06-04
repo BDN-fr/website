@@ -1,16 +1,9 @@
-body {
-    /* background-image: url('https://cataas.com/cat'); Moved into the page for avoid image caching*/
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow-x: hidden;
-}
-
 #message {
     position: absolute;
     cursor: move;
     width: max-content;
     overflow: hidden;
+    z-index: 1000;
 }
 
 .message-animation {
