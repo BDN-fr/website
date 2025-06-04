@@ -149,6 +149,12 @@ img {
     
 } */
 
+.background-image {
+    background-image: url('/img/background.png');
+    background-size: cover;
+    background-position: center;
+}
+
 ::selection {
     background-color: #FF9BD1;
     color: #ffffff;

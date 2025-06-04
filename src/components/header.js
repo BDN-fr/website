@@ -1,9 +1,11 @@
+import Link from 'next/link'
+
 export function Header() {
     return (
         <header className="fully-centered">
-            <a href="/">Homepage</a>
-            <a href="/socials">Socials</a>
-            <a href="/projects">Projects</a>
+            <Link href="/">Homepage</Link>
+            <Link href="/socials">Socials</Link>
+            <Link href="/projects">Projects</Link>
         </header>
     )
 };

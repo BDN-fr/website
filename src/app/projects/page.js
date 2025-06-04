@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 function Project({name, image, children}) {
     return (
         <div className="bordered zoom-on-hover" style={{width:'100%', marginTop:'2em'}}>
@@ -12,27 +14,27 @@ function Project({name, image, children}) {
 
 export default function Page() {
     return (
-        <main>
+        <main className="background-image">
             <div className="content" style={{width:'80%', paddingTop:'1em'}}>
                 <Project
                 name='Ellevia'
                 image='/img/ellevia.png'
                 >
                     <p>
-                        Ellevia is a website I started making to replace the shitty new <a href="https://ilevia.fr">Ilevia</a> mobile app 
+                        Ellevia is a website I started making to replace the shitty new <Link href="https://ilevia.fr">Ilevia</Link> mobile app 
                         (while working on PC obviously).
                     </p>
 
                     <p>
-                        For the frontend, i use <a href="https://nextjs.org">Next.js</a>, for the backend i simply use 
-                        the <a href="https://navitia.io">Navitia API</a> (which is used by Ilevia) with the Ilevia's API key 
+                        For the frontend, i use <Link href="https://nextjs.org">Next.js</Link>, for the backend i simply use 
+                        the <Link href="https://navitia.io">Navitia API</Link> (which is used by Ilevia) with the Ilevia's API key 
                         (simply grabbed on thier website from the requests).
                     </p>
 
                     <p style={{border:'solid #ffa202 1px', backgroundColor:'#ffa20230', padding:'0.4em', borderRadius:'8px', width:'fit-content'}}>
                         This project is in an really early WIP state, absolutely not usable for now.<br/>
-                        If you still want to check it you can visit the <a href="https://ellevia.bdn-fr.xyz">website</a> or 
-                        the <a href="https://github.com/BDN-fr/ellevia">github</a>
+                        If you still want to check it you can visit the <Link href="https://ellevia.bdn-fr.xyz">website</Link> or 
+                        the <Link href="https://github.com/BDN-fr/ellevia">github</Link>
                     </p>
                 </Project>
 
@@ -40,8 +42,8 @@ export default function Page() {
                 name='Website'
                 image='/img/pfp-transparent.png'
                 >
-                    <p>Literally the website you're on, made with <a href="https://nextjs.org">Next.js</a>.</p>
-                    <p>You can access the code on the <a href="https://github.com/BDN-fr/website">github</a>.</p>
+                    <p>Literally the website you're on, made with <Link href="https://nextjs.org">Next.js</Link>.</p>
+                    <p>You can access the code on the <Link href="https://github.com/BDN-fr/website">github</Link>.</p>
                 </Project>
 
                 <Project

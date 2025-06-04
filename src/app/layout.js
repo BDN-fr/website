@@ -5,7 +5,6 @@ export const metadata = {
 
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { MouseFollowingGradient } from '@/components/mouseFollowingGradient'
 import { ConsoleEaterEgg } from '@/components/consoleEasterEgg'
 
 import '@/global.css'
@@ -15,11 +14,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Header/>
-        {/* <MouseFollowingGradient/> */}
         {children}
         <Footer/>
+        <ConsoleEaterEgg/>
       </body>
-      <ConsoleEaterEgg/>
     </html>
   );
 }
