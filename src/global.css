@@ -59,19 +59,16 @@ body {
 }
 
 input, button {
-    height: 5vh;
-    min-height: 35px;
-    max-height: 50px;
+    height: 2rem;
     background-color: white;
     color: black;
     border-radius: 15px;
     border: none;
+    margin: 0.5rem;
 }
 
 input {
-    width: 20vw;
-    min-width: 200px;
-    text-align: center;
+    min-width: 20px;
 }
 
 button {
@@ -104,6 +101,7 @@ header {
     border-bottom-right-radius: 15px;
     width: fit-content;
     padding: 0.5em;
+    margin-right: 10px;
 
     * {
         margin-left: 0.4em;

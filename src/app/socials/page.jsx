@@ -1,4 +1,4 @@
-import { Socials } from '@/components/socials'
+import Socials from '@/components/socials'
 
 export default function Page() {
     return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function Footer() {
+export default function Footer() {
     return (
         <footer className="fully-centered">
             <div className="fully-centered">

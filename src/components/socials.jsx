@@ -27,7 +27,7 @@ function Social({name, link, icon, note}) {
     )
 }
 
-export function Socials() {
+export default function Socials() {
     return (
         <>
         <p>

@@ -3,9 +3,9 @@ export const metadata = {
   description: 'Not really "amazing"',
 };
 
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
-import { ConsoleEaterEgg } from '@/components/consoleEasterEgg'
+import Header from '@/components/header'
+import Footer from '@/components/footer'
+import ConsoleEaterEgg from '@/components/consoleEasterEgg'
 
 import '@/global.css'
 
