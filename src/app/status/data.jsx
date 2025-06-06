@@ -1,8 +1,11 @@
-export async function setData(newData) {
+'use client'
+
+export async function setData(newData, password) {
     await fetch('/api/status', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'password': password // Good security issue but why not
         },
         body: JSON.stringify(newData)
     });

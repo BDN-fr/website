@@ -1,6 +1,6 @@
 'use client'
 
-import {getData} from './data.jsx'
+import {getData} from './data'
 import { useState, useEffect } from 'react';
 
 export default function Status() {
