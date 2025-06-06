@@ -94,14 +94,14 @@ a:hover {
 
 header {
     display: flex;
-    position: fixed;
+    /* position: fixed; */
     background-color: black;
     border-bottom: #ffffff solid 1px;
-    border-right: #ffffff solid 1px;
-    border-bottom-right-radius: 15px;
-    width: fit-content;
+    /* border-right: #ffffff solid 1px; */
+    /*border-bottom-right-radius: 15px; */
+    /* width: fit-content; */
     padding: 0.5em;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 
     * {
         margin-left: 0.4em;
