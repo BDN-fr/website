@@ -5,6 +5,7 @@ import './socials.css'
 const socials = [
     {'name':'Github', 'link':'https://github.com/BDN-fr', 'icon':'github.svg', 'note':'I make open source repo sometimes, and after a week or two I abandon them and never touch them again'},
     {'name':'Discord', 'link':'https://discord.com/users/704593833421438996', 'icon':'discord.svg', 'note':'If discord\'s user shitty feature bug, my username is "bdn_fr"'},
+    {'name':'Mail', 'link':'mailto:contact@bdn-fr.xyz', 'icon':'mail.svg', 'note':'Not my prefered contact method but here anyway'},
     {'name':'Steam', 'link':'https://steamcommunity.com/id/BDN_fr', 'icon':'steam.svg'},
     {'name':'Instagram', 'link':'https://www.instagram.com/bdn_fr', 'icon':'instagram.svg', 'note':'I\'m quite inactive'},
     {'name':'Youtube', 'link':'https://youtube.com/@modo_discord', 'icon':'youtube.svg', 'note':'I shitpost sometimes'},
