@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+	--custom-pink-300: #FF9BD1;
+	--custom-pink-200: #FFAFCF;
+	--custom-blue-200: #5BCFFF;
+}
+
+::selection {
+	background-color: var(--custom-pink-200);
+}
+
+@font-face {
+	font-family: 'Linotte';
+	src: url('/fonts/Linotte-SemiBold.woff2') format('woff2');
+}
+
+body {
+	min-height: 100vh;
+	width: 100vw;
+	overflow-x: hidden;
+	font-family: 'Linotte';
+}
+
+main {
+	min-height: 100vh;
+	width: 100vw;
+}
+
+a {
+	text-decoration: underline;
+	text-decoration-color: var(--custom-blue-200);
+	transition: background 0.3s;
+}
+a:hover {
+	background-color: var(--custom-blue-200);
+}
