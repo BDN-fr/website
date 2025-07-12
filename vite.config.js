@@ -1,3 +1,4 @@
+import devtoolsJson from 'vite-plugin-devtools-json';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import tailwindcss from '@tailwindcss/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
@@ -10,7 +11,8 @@ export default defineConfig({
 		paraglideVitePlugin({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',
-			strategy: ["cookie", "localStorage", "preferredLanguage", "baseLocale"]
-		})
+			strategy: ['cookie', 'localStorage', 'preferredLanguage', 'baseLocale']
+		}),
+		devtoolsJson()
 	]
 });
