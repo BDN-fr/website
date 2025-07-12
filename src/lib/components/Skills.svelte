@@ -1,6 +1,7 @@
 <script>
+	import { m } from "$lib/paraglide/messages";
 	import ImagesScroll from "./ImagesScroll.svelte";
-
+  
   let images = shuffleArray([
     {
       src:'/icons/javascript.svg',
@@ -106,7 +107,7 @@
   }
 </script>
 
-<div id="skills" class="lg:w-fit lg:max-w-[80vw] bg-neutral-400 dark:bg-neutral-600 lg:rounded-[25px] pb-4">
-  <h1 class="text-3xl">My Skills</h1>
+<div id="skills" class="lg:w-fit lg:max-w-[80vw] bg-neutral-300 dark:bg-neutral-700 lg:rounded-[25px] pb-4">
+  <h1 class="text-3xl">{m.skills_title()}</h1>
   <ImagesScroll images={images} />
 </div>

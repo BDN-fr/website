@@ -1,10 +1,12 @@
 <script>
   import { page } from "$app/state";
+  import { m } from '$lib/paraglide/messages';
 </script>
 
-<main class="flex items-center justify-center text-center">
+<main class="flex flex-col items-center justify-center text-center">
+  <h1 class="text-red-500 text-6xl">{page.status}</h1>
   <p>
-    <b class="text-red-500">{page.status}</b> Error lol<br/>
-    <a href="/">Go back to the homepage</a>
+    {m.error()}<br/>
+    <a href="/">{m.error_homepage()}</a>
   </p>
 </main>

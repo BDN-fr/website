@@ -35,3 +35,7 @@ a:hover {
 .rounded {
 	@apply rounded-[25px];
 }
+
+button:hover {
+	cursor: pointer;
+}
