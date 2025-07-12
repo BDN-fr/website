@@ -1,8 +1,9 @@
 <script>
 	import { m } from "$lib/paraglide/messages";
+	import { onMount } from "svelte";
 	import ImagesScroll from "./ImagesScroll.svelte";
   
-  let images = shuffleArray([
+  let images = [
     {
       src:'/icons/javascript.svg',
       alt:'JavaScript'
@@ -94,7 +95,7 @@
       alt:'Vue',
       link:'https://vuejs.org/'
     }
-  ])
+  ]
 
     // @ts-ignore
     function shuffleArray(array) {
@@ -104,6 +105,10 @@
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
+
+    onMount(() => {
+      images = shuffleArray(images)
+    })
   }
 </script>
 
