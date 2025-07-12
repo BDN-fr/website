@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-	--custom-pink-300: #FF9BD1;
-	--custom-pink-200: #FFAFCF;
-	--custom-blue-200: #5BCFFF;
+	--custom-pink-300: #ff9bd1;
+	--custom-pink-200: #ffafcf;
+	--custom-blue-200: #5bcfff;
 }
 
 ::selection {
@@ -33,5 +33,5 @@ a:hover {
 }
 
 .rounded {
-	@apply rounded-[25px]
+	@apply rounded-[25px];
 }

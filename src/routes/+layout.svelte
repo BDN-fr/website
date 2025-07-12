@@ -1,19 +1,21 @@
 <script>
 	import '../app.css';
-  import ThemeSwitcher from '$lib/components/theme-switcher.svelte';
+	import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
 
 	let { children } = $props();
 </script>
 
-<div class="bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white">
-  <nav class="flex items-center h-[5vh] absolute mx-auto px-4 top-2 left-0 right-0 w-2/3 bg-neutral-500/70 rounded-full backdrop-blur-md gap-2">
-    <p>More content soon :)</p>
-    <div class="absolute right-4 h-[80%]">
-      <ThemeSwitcher/>
-    </div>
-  </nav>
+<div class="bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white">
+	<nav
+		class="absolute top-2 right-0 left-0 mx-auto flex h-[5vh] w-2/3 items-center gap-2 rounded-full bg-neutral-500/70 px-4 backdrop-blur-md"
+	>
+		<p>More content soon :)</p>
+		<div class="absolute right-4 h-[80%]">
+			<ThemeSwitcher />
+		</div>
+	</nav>
 
-  {@render children()}
+	{@render children()}
 
-  <footer></footer>
+	<footer></footer>
 </div>
