@@ -4,7 +4,8 @@
 </script>
 
 <svelte:head>
-	<title>{m.title_homepage()}</title> 
+	<title>{m.title_homepage()}</title>
+  <meta property="og:title" content={m.title_homepage()} />
 </svelte:head>
 
 <main>
