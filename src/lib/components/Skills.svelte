@@ -97,19 +97,19 @@
     }
   ]
 
-    // @ts-ignore
-    function shuffleArray(array) {
+  // @ts-ignore
+  function shuffleArray(array) {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled;
-
-    onMount(() => {
-      images = shuffleArray(images)
-    })
   }
+
+  onMount(() => {
+    images = shuffleArray(images)
+  })
 </script>
 
 <div id="skills" class="lg:w-fit lg:max-w-[80vw] bg-neutral-300 dark:bg-neutral-700 lg:rounded-[25px] pb-4">
