@@ -112,7 +112,7 @@
   })
 </script>
 
-<div id="skills" class="lg:w-fit lg:max-w-[80vw] bg-neutral-300 dark:bg-neutral-700 lg:rounded-[25px] pb-4">
+<div id="skills" class="lg:w-fit lg:max-w-[80vw] w-full bg-neutral-300 dark:bg-neutral-700 lg:rounded-[25px] pb-4">
   <h1 class="text-3xl">{m.skills_title()}</h1>
   <ImagesScroll images={images} />
 </div>
