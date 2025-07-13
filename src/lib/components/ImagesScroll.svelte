@@ -27,6 +27,7 @@
       alt={image.alt}
       title={image.alt}
       class="basis-auto grow-0 shrink-0 h-30 w-30 p-3 {image.link ? 'hover:cursor-pointer' : ''}"
+      loading="lazy"
       onclick={image.link ? () => {window.open(image.link)} : null}
       />
     {/each}
