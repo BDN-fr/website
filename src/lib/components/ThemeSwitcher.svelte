@@ -24,7 +24,7 @@
   }
 </script>
 
-<button onclick={toggleTheme} class="h-full">
-  <img src="/icons/moon.svg" alt="Switch to dark mode" class="dark:hidden h-full"/>
-  <img src="/icons/sun.svg" alt="Switch to light mode" class="not-dark:hidden h-full"/>
+<button onclick={toggleTheme} class="h-full" aria-label="Change theme">
+  <enhanced:img src="$lib/assets/icons/moon.svg" alt="Switch to dark mode" class="dark:hidden h-full"/>
+  <enhanced:img src="$lib/assets/icons/sun.svg" alt="Switch to light mode" class="not-dark:hidden h-full"/>
 </button>

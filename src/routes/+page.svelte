@@ -10,7 +10,7 @@
 
 <main>
   <section id="hero-header" class="flex items-center-safe justify-center-safe h-svh flex-col lg:flex-row gap-5 text-center p-5">
-    <img src="/images/profile.png" alt="My profile" class="size-50 rounded border-white border-2 border-solid"/>
+    <enhanced:img src="$lib/assets/images/profile.png" alt="My profile" class="size-50 rounded border-white border-2 border-solid" fetchpriority="high" />
     <div>
       <h1 class="text-7xl">{m.hero_big()}</h1>
       <p>{m.hero_welcome()}</p>

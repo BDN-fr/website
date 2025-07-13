@@ -1,101 +1,122 @@
 <script>
 	import { m } from "$lib/paraglide/messages";
 	import { onMount } from "svelte";
-	import ImagesScroll from "./ImagesScroll.svelte";
-  
+	import ImagesScroll from "$lib/components/ImagesScroll.svelte";
+
+  import javascript from "$lib/assets/icons/javascript.svg?enhanced";
+  import python from "$lib/assets/icons/python.svg?enhanced";
+  import html from "$lib/assets/icons/html.svg?enhanced";
+  import mysql from "$lib/assets/icons/mysql.svg?enhanced";
+  import git from "$lib/assets/icons/git.svg?enhanced";
+  import npm from "$lib/assets/icons/npm.svg?enhanced";
+  import pypi from "$lib/assets/icons/pypi.svg?enhanced";
+  import fivem from "$lib/assets/icons/fivem.svg?enhanced";
+  import css from "$lib/assets/icons/css.svg?enhanced";
+  import nodejs from "$lib/assets/icons/nodejs.svg?enhanced";
+  import lua from "$lib/assets/icons/lua.svg?enhanced";
+  import svelte from "$lib/assets/icons/svelte.svg?enhanced";
+  import react from "$lib/assets/icons/react.svg?enhanced";
+  import flask from "$lib/assets/icons/flask.svg?enhanced";
+  import nextjs from "$lib/assets/icons/nextjs.svg?enhanced";
+  import tailwindcss from "$lib/assets/icons/tailwindcss.svg?enhanced";
+  import express from "$lib/assets/icons/express.svg?enhanced";
+  import github from "$lib/assets/icons/github.svg?enhanced";
+  import vue from "$lib/assets/icons/vue.svg?enhanced";
+
   let images = [
     {
-      src:'/icons/javascript.svg',
-      alt:'JavaScript'
+      src: javascript,
+      alt: 'JavaScript'
     },
     {
-      src:'/icons/python.svg',
-      alt:'Python',
-      link:'https://www.python.org/'
+      src: python,
+      alt: 'Python',
+      link: 'https://www.python.org/'
     },
     {
-      src:'/icons/html.svg',
-      alt:'HTML'
+      src: html,
+      alt: 'HTML'
     },
     {
-      src:'/icons/mysql.svg',
-      alt:'MySQL'
+      src: mysql,
+      alt: 'MySQL'
     },
     {
-      src:'/icons/git.svg',
-      alt:'git',
-      link:'https://git-scm.com/'
+      src: git,
+      alt: 'git',
+      link: 'https://git-scm.com/'
     },
     {
-      src:'/icons/npm.svg',
-      alt:'npm',
-      link:'https://www.npmjs.com/'
+      src: npm,
+      alt: 'npm',
+      link: 'https://www.npmjs.com/'
     },
     {
-      src:'/icons/pypi.svg',
-      alt:'PyPI',
-      link:'https://pypi.org/'
+      src: pypi,
+      alt: 'PyPI',
+      link: 'https://pypi.org/'
     },
     {
-      src:'/icons/fivem.png',
-      alt:'FiveM (cfxLua)',
-      link:'https://fivem.net/'
+      src: fivem,
+      alt: 'FiveM (cfxLua)',
+      link: 'https://fivem.net/'
     },
     {
-      src:'/icons/css.svg',
-      alt:'CSS'
+      src: css,
+      alt: 'CSS'
     },
     {
-      src:'/icons/nodejs.svg',
-      alt:'Node.js',
-      link:'https://nodejs.org/'
+      src: nodejs,
+      alt: 'Node.js',
+      link: 'https://nodejs.org/'
     },
     {
-      src:'/icons/lua.svg',
-      alt:'Lua',
-      link:'https://www.lua.org/'
+      src: lua,
+      alt: 'Lua',
+      link: 'https://www.lua.org/'
     },
     {
-      src:'/icons/svelte.svg',
-      alt:'Svelte',
-      link:'https://svelte.dev/'
+      src: svelte,
+      alt: 'Svelte',
+      link: 'https://svelte.dev/'
     },
     {
-      src:'/icons/react.svg',
-      alt:'React',
-      link:'https://react.dev/'
+      src: react,
+      alt: 'React',
+      link: 'https://react.dev/'
     },
     {
-      src:'/icons/flask.svg',
-      alt:'Flask',
-      link:'https://flask.palletsprojects.com/'
+      src: flask,
+      alt: 'Flask',
+      link: 'https://flask.palletsprojects.com/'
     },
     {
-      src:'/icons/nextjs.svg',
-      alt:'Next.js',
-      link:'https://nextjs.org/'
+      src: nextjs,
+      alt: 'Next.js',
+      link: 'https://nextjs.org/'
     },
     {
-      src:'/icons/tailwindcss.svg',
-      alt:'Tailwind CSS',
-      link:'https://tailwindcss.com/'
+      src: tailwindcss,
+      alt: 'Tailwind CSS',
+      link: 'https://tailwindcss.com/'
     },
     {
-      src:'/icons/express.svg',
-      alt:'Express',
-      link:'https://expressjs.com/'
+      src: express,
+      alt: 'Express',
+      link: 'https://expressjs.com/'
     },
     {
-      src:'/icons/github.svg',
-      alt:'Github',
-      link:'https://github.com/'
+      src: github,
+      alt: 'Github',
+      link: 'https://github.com/'
     },
     {
-      src:'/icons/vue.svg',
-      alt:'Vue',
-      link:'https://vuejs.org/'
+      src: vue,
+      alt: 'Vue',
+      link: 'https://vuejs.org/'
     }
-  ]
+  ];
+
 
   // @ts-ignore
   function shuffleArray(array) {

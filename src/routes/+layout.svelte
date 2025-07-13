@@ -11,7 +11,7 @@
 	<title>BDN_fr</title>
   <meta property="og:title" content="BDN_fr" />
   <meta property="og:description" content={m.og_description()} />
-  <meta property="og:image" content="/images/profile.png" />
+  <meta property="og:image" content="$lib/assets/images/profile.png" />
 	<script
 		defer
 		src="https://analytics.bdn-fr.xyz/script.js"
