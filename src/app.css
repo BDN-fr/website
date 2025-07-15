@@ -12,15 +12,17 @@
 	background-color: var(--custom-pink-200);
 }
 
+* {
+  scrollbar-width: thin;
+}
+
 body {
 	min-height: 100vh;
-	width: 100vw;
-	overflow-x: hidden;
+	width: 100%;
 }
 
 main {
 	min-height: 100vh;
-	width: 100vw;
 }
 
 a {

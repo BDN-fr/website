@@ -1,7 +1,7 @@
 <script>
 	import { m } from "$lib/paraglide/messages";
 	import { onMount } from "svelte";
-	import ImagesScroll from "$lib/components/ImagesScroll.svelte";
+	import ImagesScroll from "$lib/components/ui/ImagesScroll.svelte";
 
   import javascript from "$lib/assets/icons/javascript.svg?enhanced";
   import python from "$lib/assets/icons/python.svg?enhanced";
@@ -22,6 +22,7 @@
   import express from "$lib/assets/icons/express.svg?enhanced";
   import github from "$lib/assets/icons/github.svg?enhanced";
   import vue from "$lib/assets/icons/vue.svg?enhanced";
+	import Subsection from "../ui/Subsection.svelte";
 
   let images = [
     {
@@ -133,7 +134,6 @@
   })
 </script>
 
-<div id="skills" class="lg:w-fit lg:max-w-[80vw] w-full bg-neutral-300 dark:bg-neutral-700 lg:rounded-[25px] pb-4">
-  <h1 class="text-3xl">{m.skills_title()}</h1>
+<Subsection title={m.skills_title()} paddingClass="pb-4">
   <ImagesScroll images={images} />
-</div>
+</Subsection>

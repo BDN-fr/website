@@ -1,5 +1,7 @@
 <script>
-	import Skills from "$lib/components/Skills.svelte";
+	import Projects from "$lib/components/self/Projects.svelte";
+	import Skills from "$lib/components/self/Skills.svelte";
+  import HeroHeader from "$lib/components/self/HeroHeader.svelte";
 	import { m } from "$lib/paraglide/messages";
 </script>
 
@@ -8,19 +10,11 @@
   <meta property="og:title" content={m.title_homepage()} />
 </svelte:head>
 
-<main>
-  <section id="hero-header" class="flex items-center-safe justify-center-safe h-svh flex-col lg:flex-row gap-5 text-center p-5">
-    <enhanced:img src="$lib/assets/images/profile.png" alt="My profile" class="size-50 rounded border-white border-2 border-solid" fetchpriority="high" />
-    <div>
-      <h1 class="text-7xl">{m.hero_big()}</h1>
-      <p>{m.hero_welcome()}</p>
-      <p>{m.hero_scroll()}</p>
-    </div>
-  </section>
-  <section id="main" class="flex justify-center text-center">
-    <Skills/>
-  </section>
-</main>
+<HeroHeader/>
+<section class="flex flex-col items-center text-center gap-8 w-[95%] lg:w-[80%] mx-auto">
+  <Skills/>
+  <Projects/>
+</section>
 
 <style>
 

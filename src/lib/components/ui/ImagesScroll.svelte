@@ -5,19 +5,21 @@
   let { images } = $props()
 
   let options = {
-      loop: true,
-      dragFree: true
-    }
-  let plugins = [AutoScroll({
+    loop: true,
+    dragFree: true
+  }
+  let plugins = [
+    AutoScroll({
       speed: 1,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
       playOnInit: true,
       startDelay:0
-    })]
+    })
+  ]
 </script>
 
-<div use:emblaCarouselSvelte="{{ options, plugins }}" class="overflow-hidden">
+<div use:emblaCarouselSvelte="{{ options, plugins }}" class="overflow-hidden cursor-grab active:cursor-grabbing select-none">
   <div class="flex">
     {#each images as image}
       <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -27,7 +29,7 @@
       src={image.src}
       alt={image.alt}
       title={image.alt}
-      class="basis-auto grow-0 shrink-0 h-30 w-30 p-3 {image.link ? 'hover:cursor-pointer' : ''}"
+      class="basis-auto grow-0 shrink-0 h-30 w-30 p-3 {image.link ? 'hover:not-active:cursor-pointer' : ''}"
       loading="lazy"
       onclick={image.link ? () => {window.open(image.link)} : null}
       />
