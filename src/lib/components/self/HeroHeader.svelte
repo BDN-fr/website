@@ -6,7 +6,7 @@
 <header id="hero-header" class="flex items-center-safe justify-center-safe h-svh flex-col lg:flex-row gap-5 text-center p-5">
   <div class="size-50">
     <Halo>
-      <enhanced:img src="$lib/assets/images/profile.png" alt="My profile" class="size-full rounded border-white border-2 border-solid z-10" fetchpriority="high" />
+      <enhanced:img src="$lib/assets/images/profile.png" alt="My profile" class="size-full rounded z-10" fetchpriority="high" />
     </Halo>
   </div>
   <div class="lg:ml-16">
