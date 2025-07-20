@@ -33,7 +33,7 @@
       <p>{desc}</p>
       {#if link}
         <button
-          class="h-12 w-full bg-black hover:bg-(--custom-blue-200) text-white rounded-full mt-4 flex lg:hidden group-hover:md:flex items-center justify-center gap-2 transition duration-300"
+          class="h-12 w-full bg-black hover:bg-(--custom-blue-200) text-white rounded-full mt-4 flex 2xl:hidden group-hover:2xl:flex items-center justify-center gap-2 transition duration-300"
           onclick={() => openLink(link)}
         >
           <enhanced:img src="$lib/assets/icons/open.svg" alt={m.open_link()} class="h-6/10 w-auto" />
