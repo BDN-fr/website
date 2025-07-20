@@ -11,7 +11,7 @@
 </svelte:head>
 
 <HeroHeader/>
-<section class="flex flex-col items-center text-center gap-8 w-[95%] lg:w-[80%] mx-auto">
+<section class="flex flex-col items-center text-center gap-48 w-[95%] lg:w-[80%] mx-auto">
   <Skills/>
   <Projects/>
 </section>
