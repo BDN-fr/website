@@ -23,6 +23,7 @@
   import express from "$lib/assets/icons/express.svg?enhanced";
   import github from "$lib/assets/icons/github.svg?enhanced";
   import vue from "$lib/assets/icons/vue.svg?enhanced";
+  import docker from "$lib/assets/icons/docker.svg?enhanced"
 
   let images = [
     {
@@ -115,6 +116,11 @@
       src: vue,
       alt: 'Vue',
       link: 'https://vuejs.org/'
+    },
+    {
+      src: docker,
+      alt: 'Docker',
+      link: 'https://www.docker.com/'
     }
   ];
 
