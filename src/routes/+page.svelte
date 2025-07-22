@@ -3,6 +3,7 @@
 	import Skills from "$lib/components/self/Skills.svelte";
   import HeroHeader from "$lib/components/self/HeroHeader.svelte";
 	import { m } from "$lib/paraglide/messages";
+	import Contact from "$lib/components/self/Contact.svelte";
 </script>
 
 <svelte:head>
@@ -14,6 +15,7 @@
 <section class="flex flex-col items-center text-center gap-48 w-[95%] lg:w-[80%] mx-auto">
   <Skills/>
   <Projects/>
+  <Contact/>
 </section>
 
 <style>
