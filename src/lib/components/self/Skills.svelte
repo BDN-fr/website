@@ -23,7 +23,8 @@
   import express from "$lib/assets/icons/express.svg?enhanced";
   import github from "$lib/assets/icons/github.svg?enhanced";
   import vue from "$lib/assets/icons/vue.svg?enhanced";
-  import docker from "$lib/assets/icons/docker.svg?enhanced"
+  import docker from "$lib/assets/icons/docker.svg?enhanced";
+  import pnpm from "$lib/assets/icons/pnpm.svg?enhanced";
 
   let images = [
     {
@@ -121,6 +122,11 @@
       src: docker,
       alt: 'Docker',
       link: 'https://www.docker.com/'
+    },
+    {
+      src: pnpm,
+      alt: "pnpm",
+      link: "https://pnpm.io/"
     }
   ];
 

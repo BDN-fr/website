@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-	--color-c-pink-300: #ff9bd1;
-	--color-c-pink-200: #ffafcf;
-	--color-c-blue-200: #5bcfff;
+  --color-c-pink-300: #ff9bd1;
+  --color-c-pink-200: #ffafcf;
+  --color-c-blue-200: #5bcfff;
 
 	--halo-color: var(--color-c-blue-200);
 	--halo-blur: 90px;
@@ -42,6 +42,7 @@
 
 ::selection {
 	background-color: var(--color-c-pink-200);
+  color: black;
 }
 
 * {
@@ -57,14 +58,14 @@ main {
 	min-height: 100vh;
 }
 
-a {
+/* a {
 	text-decoration: underline;
 	text-decoration-color: var(--color-c-blue-200);
 	transition: background 0.3s;
 }
 a:hover {
 	background-color: var(--color-c-blue-200);
-}
+} */
 
 .rounded {
 	@apply rounded-[25px];

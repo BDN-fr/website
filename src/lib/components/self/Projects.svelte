@@ -49,13 +49,13 @@
       </div>
       <p class="whitespace-pre-line">{desc.replaceAll('%nl%', '\n')}</p>
       {#if link}
-        <button
+        <a
           class="h-12 w-full bg-black hover:halo halo-blur-50 text-white rounded-full mt-4 flex 2xl:hidden group-hover:2xl:flex items-center justify-center gap-2 transition duration-300"
-          onclick={() => openLink(link)}
+          href={link}
         >
           <enhanced:img src="$lib/assets/icons/open.svg" alt={m.open_link()} class="h-6/10 w-auto" />
           {m.open_link()}
-        </button>
+        </a>
       {/if}
     </Subsection>
   </div>
@@ -67,5 +67,5 @@
       {@render project(p.name, p.logo, p.link, p.tags, p.desc)}
     {/each}
   </div>
-  More projects soon...
+  {m.project_more_soon()}
 </Subsection>

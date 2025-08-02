@@ -4,20 +4,18 @@
   import HeroHeader from "$lib/components/self/HeroHeader.svelte";
 	import { m } from "$lib/paraglide/messages";
 	import Contact from "$lib/components/self/Contact.svelte";
+	import Navbar from "$lib/components/self/Navbar.svelte";
+	import Seo from "$lib/components/self/SEO.svelte";
+	import Socials from "$lib/components/self/Socials.svelte";
 </script>
 
-<svelte:head>
-	<title>{m.title_homepage()}</title>
-  <meta property="og:title" content={m.title_homepage()} />
-</svelte:head>
+<Seo title={m.title_homepage()} />
 
+<Navbar/>
 <HeroHeader/>
 <section class="flex flex-col items-center text-center gap-48 w-[95%] lg:w-[80%] mx-auto">
   <Skills/>
   <Projects/>
   <Contact/>
+  <Socials/>
 </section>
-
-<style>
-
-</style>
