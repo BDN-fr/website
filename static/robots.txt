@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /
+
+# Allow DuckDuckGo because I love it
+User-agent: DuckDuckBot
+Disallow:
+
+# Allow the Internet Archive (wayback machine) and Alexa (because there are the same crawler)
+User-agent: ia_archiver
+Disallow: 

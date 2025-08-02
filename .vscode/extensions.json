@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "svelte.svelte-vscode",
+    "bradlc.vscode-tailwindcss", // for tailwind css autocompletion
+    "inlang.vs-code-extension", // localization
+    "esbenp.prettier-vscode", // make code look better
+    "ms-azuretools.vscode-containers" // testing build
+  ]
+}

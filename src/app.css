@@ -1,0 +1,76 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-c-pink-300: #ff9bd1;
+  --color-c-pink-200: #ffafcf;
+  --color-c-blue-200: #5bcfff;
+
+	--halo-color: var(--color-c-blue-200);
+	--halo-blur: 90px;
+	--halo-size: 0px;
+
+	--animate-fade-in: fade-in 1s ease-out;
+	@keyframes fade-in {
+    0% {
+			opacity: 0;
+			transform: translateY(30px);
+    }
+    100% {
+			opacity: 1;
+			transform: translateY(0);
+    }
+	}
+}
+
+@utility halo {
+  box-shadow: var(--halo-color) 0px 0px var(--halo-blur) var(--halo-size);
+}
+
+@utility halo-color-* {
+	--halo-color: --value(--color-*);
+}
+
+@utility halo-size-* {
+	--halo-size: calc(--value(integer) * 1px);
+}
+
+@utility halo-blur-* {
+	--halo-blur: calc(--value(integer) * 1px);
+}
+
+::selection {
+	background-color: var(--color-c-pink-200);
+  color: black;
+}
+
+* {
+  scrollbar-width: thin;
+}
+
+body {
+	min-height: 100vh;
+	width: 100%;
+}
+
+main {
+	min-height: 100vh;
+}
+
+/* a {
+	text-decoration: underline;
+	text-decoration-color: var(--color-c-blue-200);
+	transition: background 0.3s;
+}
+a:hover {
+	background-color: var(--color-c-blue-200);
+} */
+
+.rounded {
+	@apply rounded-[25px];
+}
+
+button:hover {
+	cursor: pointer;
+}
