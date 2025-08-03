@@ -1,6 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages";
-	import CardTilt from "../ui/CardTilt.svelte";
+	import CardTilt from "$lib/components/ui/CardTilt.svelte";
 </script>
 
 <header id="hero-header" class="flex items-center-safe justify-center-safe h-svh flex-col lg:flex-row gap-5 text-center p-5 animate-fade-in">

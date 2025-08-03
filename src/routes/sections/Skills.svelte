@@ -2,7 +2,7 @@
 	import { m } from "$lib/paraglide/messages";
 	import { onMount } from "svelte";
 	import ImagesScroll from "$lib/components/ui/ImagesScroll.svelte";
-  import Subsection from "../ui/Subsection.svelte";
+  import Subsection from "$lib/components/ui/Subsection.svelte";
 
   import javascript from "$lib/assets/icons/javascript.svg?enhanced";
   import python from "$lib/assets/icons/python.svg?enhanced";

@@ -1,7 +1,7 @@
 <script>
 	import { m } from "$lib/paraglide/messages";
-	import Link from "../ui/Link.svelte";
-	import Subsection from "../ui/Subsection.svelte";
+	import Link from "$lib/components/ui/Link.svelte";
+	import Subsection from "$lib/components/ui/Subsection.svelte";
 </script>
 
 <Subsection title={m.socials_title()}>

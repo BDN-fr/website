@@ -1,6 +1,6 @@
 <script>
   import { m } from "$lib/paraglide/messages";
-	import Subsection from "../ui/Subsection.svelte";
+	import Subsection from "$lib/components/ui/Subsection.svelte";
 
   /**
 	 * @param {string} link

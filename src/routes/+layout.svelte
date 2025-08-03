@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import Footer from '$lib/components/self/Footer.svelte';
+	import Navbar from '$lib/components/self/Navbar.svelte';
 
 	let { children } = $props();
 </script>
@@ -14,8 +15,9 @@
 </svelte:head>
 
 <div class="bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white">
-	<main>
+	<Navbar/>
+	<div class="min-h-svh">
 		{@render children()}
-	</main>
+	</div>
 	<Footer/>
 </div>
