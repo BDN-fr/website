@@ -25,6 +25,7 @@
   import vue from "$lib/assets/icons/vue.svg?enhanced";
   import docker from "$lib/assets/icons/docker.svg?enhanced";
   import pnpm from "$lib/assets/icons/pnpm.svg?enhanced";
+  import godot from "$lib/assets/icons/godot.svg?enhanced";
 
   let images = [
     {
@@ -127,6 +128,11 @@
       src: pnpm,
       alt: "pnpm",
       link: "https://pnpm.io/"
+    },
+    {
+      src: godot,
+      alt: "Godot (GDScript)",
+      link: 'https://godotengine.org/'
     }
   ];
 
