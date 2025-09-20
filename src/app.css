@@ -3,9 +3,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-c-pink-300: #ff9bd1;
-  --color-c-pink-200: #ffafcf;
-  --color-c-blue-200: #5bcfff;
+	--color-c-pink-300: #ff9bd1;
+	--color-c-pink-200: #ffafcf;
+	--color-c-blue-200: #5bcfff;
 
 	--halo-color: var(--color-c-blue-200);
 	--halo-blur: 90px;
@@ -13,19 +13,19 @@
 
 	--animate-fade-in: fade-in 1s ease-out;
 	@keyframes fade-in {
-    0% {
+		0% {
 			opacity: 0;
 			transform: translateY(30px);
-    }
-    100% {
+		}
+		100% {
 			opacity: 1;
 			transform: translateY(0);
-    }
+		}
 	}
 }
 
 @utility halo {
-  box-shadow: var(--halo-color) 0px 0px var(--halo-blur) var(--halo-size);
+	box-shadow: var(--halo-color) 0px 0px var(--halo-blur) var(--halo-size);
 }
 
 @utility halo-color-* {
@@ -42,11 +42,11 @@
 
 ::selection {
 	background-color: var(--color-c-pink-200);
-  color: black;
+	color: black;
 }
 
 * {
-  scrollbar-width: thin;
+	scrollbar-width: thin;
 }
 
 body {

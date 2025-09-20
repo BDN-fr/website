@@ -15,9 +15,9 @@
 </svelte:head>
 
 <div class="bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white">
-	<Navbar/>
+	<Navbar />
 	<div class="min-h-svh">
 		{@render children()}
 	</div>
-	<Footer/>
+	<Footer />
 </div>
