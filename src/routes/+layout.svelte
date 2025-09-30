@@ -10,7 +10,7 @@
 	<script
 		defer
 		src="https://analytics.bdn-fr.xyz/script.js"
-		data-website-id="11f9c6a0-b6cd-4a26-9edf-1c1518b465a0"
+		data-website-id="1b262083-0f6a-441f-a438-03ceef09e39a"
 	></script>
 </svelte:head>
 
