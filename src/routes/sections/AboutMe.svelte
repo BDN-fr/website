@@ -12,7 +12,7 @@
   <div class="flex justify-center md:w-2/3 mx-auto">
     <p class="text-left">
       I'm a {age} yo transgender 🏳️‍⚧️ non-binary girl nerd who likes eating graphic cards and play video games.
-      My pronoums are she / they.
+      My pronoums are she / her.
       I live in France in the Nord, I'm in terminale (12th grade in the country of guns and eagles) with Maths and Computer class in specialites.
       I learnt developpement by myself starting with python at the age of 12 (not sure tbh xD).
       I really don't like Javascript but (of course) like Python.
