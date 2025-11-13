@@ -21,7 +21,7 @@
 		{
 			name: 'Ellevia',
 			logo: elleviaLogo,
-			link: 'https://ellevia.bdn-fr.xyz/',
+			link: 'https://github.com/BDN-fr/ellevia/',
 			tags: ['Sveltekit', 'Tailwind CSS', 'HTML', 'JS', 'CSS', 'Typescript', 'API'],
 			desc: m.project_ellevia_desc()
 		},
