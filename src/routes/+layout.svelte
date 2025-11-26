@@ -8,9 +8,10 @@
 
 <svelte:head>
 	<script
-		defer
-		src="https://analytics.bdn-fr.xyz/script.js"
-		data-website-id="1b262083-0f6a-441f-a438-03ceef09e39a"
+    src="https://rybbit.bdn-fr.xyz/api/script.js"
+    data-site-id="1"
+    data-session-replay="true"
+    defer
 	></script>
 </svelte:head>
 
