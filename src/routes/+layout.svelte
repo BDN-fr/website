@@ -10,7 +10,6 @@
 	<script
     src="https://rybbit.bdn-fr.xyz/api/script.js"
     data-site-id="1"
-    data-session-replay="true"
     defer
 	></script>
 </svelte:head>
