@@ -1,23 +1,14 @@
-<script>
-	import '../app.css';
-	import Footer from '$lib/components/self/Footer.svelte';
-	import Navbar from '$lib/components/self/Navbar.svelte';
+<script lang="ts">
+	import './layout.css';
+	import favicon from '$lib/assets/favicon.svg';
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<script
-		defer
-		src="https://analytics.bdn-fr.xyz/script.js"
-		data-website-id="1b262083-0f6a-441f-a438-03ceef09e39a"
-	></script>
+	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="bg-neutral-100 text-black dark:bg-neutral-800 dark:text-white">
-	<Navbar />
-	<div class="min-h-svh">
-		{@render children()}
-	</div>
-	<Footer />
+<div class="max-w-full min-h-lvh text-base bg-neutral-600 text-neutral-content relative overflow-hidden">
+	{@render children()}
 </div>

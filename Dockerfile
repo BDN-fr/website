@@ -1,21 +1,19 @@
-FROM node:22-alpine AS builder
+FROM node:25-alpine AS builder
 WORKDIR /app
-
+COPY package*.json .
+COPY pnpm-lock.yaml .
 RUN npm i -g pnpm
-COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN pnpm i
 COPY . .
 RUN pnpm run build
 RUN pnpm prune --production
 
-FROM node:22-alpine AS runner
+FROM node:25-alpine AS runner
 WORKDIR /app
-
-COPY --from=builder /app/build ./build
+COPY --from=builder /app/build build/
+COPY --from=builder /app/package.json .
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./
 
 EXPOSE 3000
 ENV NODE_ENV=production
-
-CMD ["node", "build"]
+CMD [ "node", "build" ]
