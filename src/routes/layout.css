@@ -9,13 +9,15 @@
 @theme {
 	--font-sans: Jersey10;
 
-  --color-neutral: #aaaaaa;
-  --color-neutral-content: black;
+	--color-neutral: #aaaaaa;
+	--color-neutral-content: black;
 	--color-titlebar: #ff9bd1;
 	--color-titlebar-content: black;
 	--color-selected: #ffafcf;
 	--color-selected-content: black;
-  --color-shadow: #222222;
+	--color-shadow: #222222;
+
+	--title-bar-height: calc(var(--spacing) * 7); /* h-7 */
 
 	--text-xs: 0.875rem;
 	--text-xs--line-height: calc(1.25 / 0.875);
