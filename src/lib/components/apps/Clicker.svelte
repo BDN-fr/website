@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Window from "../ui/Window.svelte";
-  import Button from "../ui/Button.svelte";
+	import Window from '../ui/Window.svelte';
+	import Button from '../ui/Button.svelte';
 
-  interface Props {
-    windowOpened: boolean;
-  }
-  let { windowOpened = $bindable(false) }: Props = $props()
+	interface Props {
+		windowOpened: boolean;
+	}
+	let { windowOpened = $bindable(false) }: Props = $props();
 	let count = $state(0);
 </script>
 
