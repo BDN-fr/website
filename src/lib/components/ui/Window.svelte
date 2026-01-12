@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { topWindow } from '$lib/stores/TopWindow';
 
 	interface Props {
 		title: string;
@@ -29,6 +30,8 @@
 		...rest
 	}: Props = $props();
 
+	let uid = $props.id();
+
 	let yDiff = 0;
 	let xDiff = 0;
 	let scrollY = $state(0);
@@ -49,9 +52,19 @@
 				element.style.left = left + 'px';
 			}
 		});
+
+		const unsubscribe = topWindow.subscribe((value) => {
+			isTopWindow = value === uid;
+		});
+
+		return () => {
+			unsubscribe();
+		};
 	});
 
 	let element: HTMLDivElement | undefined = $state();
+
+	let isTopWindow = $state(false);
 
 	function mouseDown(event: MouseEvent) {
 		if (isFullscreen) return;
@@ -85,16 +98,27 @@
 	}
 </script>
 
-<svelte:window onmousemove={move} onmouseup={() => (drag = false)} onscroll={scroll} />
+<svelte:window
+	onmousemove={move}
+	onmouseup={() => {
+		drag = false;
+	}}
+	onscroll={scroll}
+/>
 
 {#if open}
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		bind:this={element}
 		class={[
 			'absolute shadow-shadow/50 shadow-xl overflow-hidden min-h-fit',
+			isTopWindow ? 'z-50' : '',
 			isResizable ? 'resize' : '',
 			minWidthClass
 		]}
+		onmousedown={() => {
+			topWindow.set(uid);
+		}}
 	>
 		<!-- style={`left:${left}px; top:${top}px;`} -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->

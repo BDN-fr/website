@@ -25,7 +25,9 @@
 			{/if}
 			{@render children?.()}
 		</div>
-		<h2 class="not-group-focus:truncate max-w-full shrink z-1 text-white text-shadow-shadow">
+		<h2
+			class="not-group-focus:truncate max-w-full shrink z-1 text-white text-shadow-shadow select-none"
+		>
 			{appName}
 		</h2>
 	</button>

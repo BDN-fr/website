@@ -1,13 +1,23 @@
 <script lang="ts">
 	import Window from '../ui/Window.svelte';
 	import Button from '../ui/Button.svelte';
+	import Icon from '../self/Desktop/Icon.svelte';
 
 	interface Props {
-		windowOpened: boolean;
+		windowOpened?: boolean;
 	}
 	let { windowOpened = $bindable(false) }: Props = $props();
 	let count = $state(0);
 </script>
+
+<Icon
+	appName="Clicker"
+	onOpen={() => {
+		windowOpened = true;
+	}}
+>
+	<span class="icon-[pixel--trending-solid]"></span>
+</Icon>
 
 <Window
 	title={`Clicker | ${count}`}
