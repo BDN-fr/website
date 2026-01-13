@@ -12,9 +12,11 @@
 	isResizable={false}
 	class="flex justify-center items-center p-4 gap-4"
 >
-	<span class="icon-[pixel--times-circle] bg-red-500 text-5xl"></span>
-	<div class="flex flex-col justify-center items-center gap-2">
-		You encontered an error
+	<div class="gap-10">
+		<div class="flex gap-2">
+			<span class="icon-[pixel--times-circle] bg-red-500 text-5xl"></span>
+			<h2>You encontered an error</h2>
+		</div>
 		<Button href="/">Return to the homepage</Button>
 	</div>
 </Window>

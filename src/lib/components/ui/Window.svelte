@@ -114,7 +114,8 @@
 			'absolute shadow-shadow/50 shadow-xl overflow-hidden min-h-fit',
 			isTopWindow ? 'z-50' : '',
 			isResizable ? 'resize' : '',
-			minWidthClass
+			minWidthClass,
+			maxWidthClass
 		]}
 		onmousedown={() => {
 			topWindow.set(uid);

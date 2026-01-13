@@ -1,6 +1,7 @@
 <script lang="ts">
 	import AboutMe from '$lib/components/apps/AboutMe.svelte';
 	import Clicker from '$lib/components/apps/Clicker.svelte';
+	import Github from '$lib/components/apps/Github.svelte';
 </script>
 
 <div
@@ -8,4 +9,5 @@
 >
 	<Clicker />
 	<AboutMe />
+	<Github />
 </div>
