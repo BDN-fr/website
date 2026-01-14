@@ -45,6 +45,10 @@
 	let drag = $state(false);
 	let isFullscreen = false;
 
+	let element: HTMLDivElement | undefined = $state();
+
+	let isTopWindow = $state(false);
+
 	onMount(() => {
 		$effect(() => {
 			if (element) {
@@ -52,6 +56,11 @@
 				element.style.left = left + 'px';
 			}
 		});
+		$effect(() => {
+			if (open) {
+				topWindow.set(uid)
+			}
+		})
 
 		const unsubscribe = topWindow.subscribe((value) => {
 			isTopWindow = value === uid;
@@ -61,10 +70,6 @@
 			unsubscribe();
 		};
 	});
-
-	let element: HTMLDivElement | undefined = $state();
-
-	let isTopWindow = $state(false);
 
 	function mouseDown(event: MouseEvent) {
 		if (isFullscreen) return;
