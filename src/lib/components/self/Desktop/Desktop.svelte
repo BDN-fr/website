@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AboutMe from '$lib/components/apps/AboutMe.svelte';
+	import ChangeMode from '$lib/components/apps/ChangeMode.svelte';
 	import Clicker from '$lib/components/apps/Clicker.svelte';
 	import Github from '$lib/components/apps/Github.svelte';
 </script>
@@ -10,4 +11,5 @@
 	<Clicker />
 	<AboutMe />
 	<Github />
+	<ChangeMode />
 </div>

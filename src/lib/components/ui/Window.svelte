@@ -58,9 +58,9 @@
 		});
 		$effect(() => {
 			if (open) {
-				topWindow.set(uid)
+				topWindow.set(uid);
 			}
-		})
+		});
 
 		const unsubscribe = topWindow.subscribe((value) => {
 			isTopWindow = value === uid;
