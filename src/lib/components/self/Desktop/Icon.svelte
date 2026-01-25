@@ -15,11 +15,11 @@
 	}
 </script>
 
-<div class={["relative", $isMobile ? 'w-18 h-24' : 'w-24 h-18']}>
+<div class={['relative', $isMobile ? 'w-18 h-24' : 'w-24 h-18']}>
 	<button
 		class="group w-full h-fit hover:bg-neutral/10 focus:bg-neutral/30 flex flex-col items-center justify-center absolute"
-		onclick={(e) => ($isMobile && click(e))}
-		ondblclick={(e) => (!$isMobile && click(e))}
+		onclick={(e) => $isMobile && click(e)}
+		ondblclick={(e) => !$isMobile && click(e)}
 	>
 		<div class="size-full grow *:size-14 flex justify-center items-center">
 			{#if !children}

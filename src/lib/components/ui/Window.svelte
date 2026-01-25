@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 	import { topWindow } from '$lib/stores/TopWindow';
 	import { isMobile } from '$lib/stores/IsMobile';
 
@@ -47,11 +47,11 @@
 	let isFullscreen = $state(false);
 
 	if ($isMobile) {
-		isFullscreen = true
-		isFullscreenable = false
-		isResizable = false
-		top = 0
-		left = 0
+		isFullscreen = true;
+		isFullscreenable = false;
+		isResizable = false;
+		top = 0;
+		left = 0;
 	}
 
 	let element: HTMLDivElement | undefined = $state();
@@ -60,22 +60,21 @@
 
 	onMount(() => {
 		$effect(() => {
-			if (element) {
-				element.style.top = top + 'px';
-				element.style.left = left + 'px';
-			}
-		});
-		$effect(() => {
 			if (open) {
 				topWindow.set(uid);
 			}
 		});
 		$effect(() => {
-			if (isFullscreen) {
-				top = 0
-				left = 0
+			if (typeof element != 'undefined') {
+				if (isFullscreen) {
+					element.style.top = '0px';
+					element.style.left = '0px';
+				} else {
+					element.style.top = top + 'px';
+					element.style.left = left + 'px';
+				}
 			}
-		})
+		});
 
 		const unsubscribe = topWindow.subscribe((value) => {
 			isTopWindow = value === uid;
@@ -109,7 +108,7 @@
 
 	function fullscreen() {
 		if (!isFullscreenable) return;
-		isFullscreen = !isFullscreen
+		isFullscreen = !isFullscreen;
 	}
 
 	function close() {
@@ -166,7 +165,7 @@
 		<div
 			class={[
 				'bg-neutral text-neutral-content w-full h-full overflow-auto',
-				$isMobile || isFullscreen ? 'h-lvh' : minHeightClass,
+				isFullscreen ? 'h-lvh' : minHeightClass,
 				className
 			]}
 			{...rest}

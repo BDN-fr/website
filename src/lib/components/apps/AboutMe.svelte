@@ -37,7 +37,7 @@
 <Window
 	title="About Me"
 	bind:open={windowOpened}
-	isFullscreenable={false}
+	isFullscreenable={true}
 	minWidthClass="min-w-[500px]"
 	maxWidthClass="max-w-[700px]"
 	class="p-2 flex flex-col gap-2"

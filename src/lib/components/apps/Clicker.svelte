@@ -8,6 +8,24 @@
 	}
 	let { windowOpened = $bindable(false) }: Props = $props();
 	let count = $state(0);
+
+	let clickMessages: Record<string, string> = {
+		10: 'This clicker lead nowhere',
+		50: 'You clicked 50 times, are you ok ?',
+		55: 'Can you like... Stop ?',
+		60: 'Ok I got it you wont',
+		80: 'Are you expecting an easter egg ?',
+		85: 'Sorry no easter egg here',
+		100: 'Ok just go on, I give up'
+	};
+
+	$effect(() => {
+		if (clickMessages.hasOwnProperty(count.toString())) {
+			setTimeout(() => {
+				alert(clickMessages[count.toString()]);
+			}, 0);
+		}
+	});
 </script>
 
 <Icon
