@@ -3,7 +3,7 @@ import { writable, type Writable } from 'svelte/store';
 export const isMobile: Writable<null | boolean> = writable(false);
 
 // https://stackoverflow.com/a/113817
-if (typeof localStorage != "undefined" && typeof "localStorage.getItem" == "function") {
+if (typeof localStorage != "undefined" && typeof localStorage.getItem == "function") {
 	let check = localStorage.getItem('isMobile') == 'true' ? true : false;
 	if (!check) {
 		// prettier-ignore
