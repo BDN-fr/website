@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { topWindow } from '$lib/stores/TopWindow';
+	import { isMobile } from '$lib/stores/IsMobile';
 
 	interface Props {
 		title: string;
@@ -43,7 +44,15 @@
 	top = 100;
 	left = 100;
 	let drag = $state(false);
-	let isFullscreen = false;
+	let isFullscreen = $state(false);
+
+	if ($isMobile) {
+		isFullscreen = true
+		isFullscreenable = false
+		isResizable = false
+		top = 0
+		left = 0
+	}
 
 	let element: HTMLDivElement | undefined = $state();
 
@@ -61,6 +70,12 @@
 				topWindow.set(uid);
 			}
 		});
+		$effect(() => {
+			if (isFullscreen) {
+				top = 0
+				left = 0
+			}
+		})
 
 		const unsubscribe = topWindow.subscribe((value) => {
 			isTopWindow = value === uid;
@@ -94,7 +109,7 @@
 
 	function fullscreen() {
 		if (!isFullscreenable) return;
-		console.log("later soon soon i promise (don't trust me)");
+		isFullscreen = !isFullscreen
 	}
 
 	function close() {
@@ -117,16 +132,16 @@
 		bind:this={element}
 		class={[
 			'absolute shadow-shadow/50 shadow-xl overflow-hidden min-h-fit',
-			isTopWindow ? 'z-50' : '',
-			isResizable ? 'resize' : '',
-			minWidthClass,
-			maxWidthClass
+			isFullscreen ? 'min-w-lvw h-lvh' : '',
+			isTopWindow ? 'z-50' : 'z-10',
+			isResizable && !isFullscreen ? 'resize' : '',
+			isFullscreen ? '' : minWidthClass,
+			isFullscreen ? '' : maxWidthClass
 		]}
 		onmousedown={() => {
 			topWindow.set(uid);
 		}}
 	>
-		<!-- style={`left:${left}px; top:${top}px;`} -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			onmousedown={mouseDown}
@@ -151,7 +166,7 @@
 		<div
 			class={[
 				'bg-neutral text-neutral-content w-full h-full overflow-auto',
-				minHeightClass,
+				$isMobile || isFullscreen ? 'h-lvh' : minHeightClass,
 				className
 			]}
 			{...rest}

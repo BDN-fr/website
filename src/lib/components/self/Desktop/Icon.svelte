@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { isMobile } from '$lib/stores/IsMobile';
 	import type { Snippet } from 'svelte';
 
 	interface Props {
@@ -14,12 +15,13 @@
 	}
 </script>
 
-<div class="w-20 h-24 relative">
+<div class={["relative", $isMobile ? 'w-18 h-24' : 'w-24 h-18']}>
 	<button
-		class="group w-20 h-fit hover:bg-neutral/10 focus:bg-neutral/30 flex flex-col items-center justify-center absolute"
-		ondblclick={click}
+		class="group w-full h-fit hover:bg-neutral/10 focus:bg-neutral/30 flex flex-col items-center justify-center absolute"
+		onclick={(e) => ($isMobile && click(e))}
+		ondblclick={(e) => (!$isMobile && click(e))}
 	>
-		<div class="size-full grow *:size-18 flex justify-center items-center">
+		<div class="size-full grow *:size-14 flex justify-center items-center">
 			{#if !children}
 				<span class="icon-[pixel--giphy]"></span>
 			{/if}

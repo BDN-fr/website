@@ -40,16 +40,16 @@
 	isFullscreenable={false}
 	minWidthClass="min-w-[500px]"
 	maxWidthClass="max-w-[700px]"
-	class="p-2 flex flex-col"
+	class="p-2 flex flex-col gap-2"
 >
 	<div class="flex gap-4">
 		{#if discord}
 			<div class="relative flex items-center flex-col">
-				<div class="size-[155px] flex items-center justify-center">
+				<div class="size-[144px] flex items-center justify-center">
 					<img
 						src={`https://cdn.discordapp.com/avatars/${discord.id}/${discord.avatar}?size=128'`}
 						alt="Avatar"
-						class="rounded-full absolute size-[128px] shadow shadow-shadow"
+						class="rounded-full absolute size-[120px] shadow shadow-shadow"
 					/>
 					{#if discord.avatar_decoration_data}
 						<img
@@ -87,4 +87,5 @@
 			</p>
 		</div>
 	</div>
+	I WILL ADD MORE THINGS, on this shitty website and on this app
 </Window>
