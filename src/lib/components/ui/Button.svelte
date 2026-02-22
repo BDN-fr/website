@@ -7,7 +7,7 @@
 
 <Button.Root
 	class={[
-		'border border-titlebar size-fit px-6 shadow shadow-shadow bg-neutral text-neutral-content',
+		'border border-accent size-fit px-6 shadow shadow-shadow bg-neutral text-neutral-content hover:border-selection cursor-pointer',
 		className
 	]}
 	{...rest}

@@ -11,13 +11,13 @@
 
 	--color-neutral: #aaaaaa;
 	--color-neutral-content: black;
-	--color-titlebar: #ff9bd1;
-	--color-titlebar-content: black;
-	--color-selected: #ffafcf;
-	--color-selected-content: black;
+	--color-accent: #ff9bd1;
+	--color-accent-content: black;
 	--color-shadow: #222222;
+	--color-selection: #5BCFFF;
+	--color-selection-content: black;
 
-	--title-bar-height: calc(var(--spacing) * 7); /* h-7 */
+	--titlebar-height: calc(var(--spacing) * 7); /* h-7 */
 
 	--text-xs: 0.875rem;
 	--text-xs--line-height: calc(1.25 / 0.875);
@@ -47,7 +47,12 @@
 	--text-9xl--line-height: 1;
 }
 
+::selection {
+	background-color: var(--color-selection);
+	color: var(--color-selection-content);
+}
+
 /* * {
-	scrollbar-width: auto;
+	scrollbar-width: thin;
 	scrollbar-color: yellow blue;
 } */

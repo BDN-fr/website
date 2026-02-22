@@ -1,15 +1,13 @@
 <script lang="ts">
-	import { onMount, untrack } from 'svelte';
+	import { onMount } from 'svelte';
 	import { topWindow } from '$lib/stores/TopWindow';
 	import { isMobile } from '$lib/stores/IsMobile';
 
 	interface Props {
 		title: string;
 		open: boolean;
-		minWidthClass?: string;
-		minHeightClass?: string;
-		maxWidthClass?: string;
-		maxHeightClass?: string;
+		widthClass?: string;
+		heightClass?: string;
 		isFullscreenable?: boolean;
 		isClosable?: boolean;
 		isResizable?: boolean;
@@ -19,10 +17,8 @@
 	let {
 		title,
 		open = $bindable(true),
-		minWidthClass = 'min-w-40',
-		minHeightClass = 'min-h-25',
-		maxWidthClass,
-		maxHeightClass,
+		widthClass = 'min-w-40 w-fit',
+		heightClass = 'min-h-25 h-fit',
 		isFullscreenable = true,
 		isClosable = true,
 		isResizable = true,
@@ -41,8 +37,8 @@
 	let mouseX = $state(0);
 	let top = $derived(mouseY - yDiff + scrollY);
 	let left = $derived(mouseX - xDiff + scrollX);
-	top = 100;
-	left = 100;
+	top = 25;
+	left = 25;
 	let drag = $state(false);
 	let isFullscreen = $state(false);
 
@@ -130,12 +126,8 @@
 	<div
 		bind:this={element}
 		class={[
-			'absolute shadow-shadow/50 shadow-xl overflow-hidden min-h-fit',
-			isFullscreen ? 'min-w-lvw h-lvh' : '',
-			isTopWindow ? 'z-50' : 'z-10',
-			isResizable && !isFullscreen ? 'resize' : '',
-			isFullscreen ? '' : minWidthClass,
-			isFullscreen ? '' : maxWidthClass
+			'fixed shadow-shadow/50 shadow-xl',
+			isTopWindow ? 'z-50' : 'z-10'
 		]}
 		onmousedown={() => {
 			topWindow.set(uid);
@@ -144,28 +136,31 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
 			onmousedown={mouseDown}
-			class="bg-titlebar text-titlebar-content flex items-center px-2 gap-2 select-none h-(--titlebar-height)"
+			class="absolute bg-accent text-accent-content flex items-center px-2 gap-2 select-none w-full h-(--titlebar-height)"
 		>
 			<span class="grow truncate">{title}</span>
 			{#if isFullscreenable}
 				<button
 					aria-label="fullscreen"
-					class="icon-[pixel--expand] text-titlebar-content hover:text-white scale-90 shrink-0"
+					class="icon-[pixel--expand] text-accent-content hover:text-white scale-90 shrink-0"
 					onclick={fullscreen}
 				></button>
 			{/if}
 			{#if isClosable}
 				<button
 					aria-label="close"
-					class="icon-[pixel--window-close] text-titlebar-content hover:text-red-500 shrink-0"
+					class="icon-[pixel--window-close] text-accent-content hover:text-red-500 shrink-0"
 					onclick={close}
 				></button>
 			{/if}
 		</div>
+		<div class="h-(--titlebar-height) bg-red-500 w-full"></div>
 		<div
 			class={[
-				'bg-neutral text-neutral-content w-full h-full overflow-auto',
-				isFullscreen ? 'h-lvh' : minHeightClass,
+				'bg-neutral text-neutral-content w-[calc(100lvw-50px)] max-h-[calc(calc(100lvh-var(--titlebar-height))-50px)] overflow-auto',
+				isResizable && !isFullscreen ? 'resize' : '',
+				isFullscreen ? 'min-w-lvw' : widthClass,
+				isFullscreen ? 'min-h-[calc(100lvh-var(--titlebar-height))]' : heightClass,
 				className
 			]}
 			{...rest}

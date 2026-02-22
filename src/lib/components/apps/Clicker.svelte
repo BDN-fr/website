@@ -41,8 +41,7 @@
 	title={`Clicker | ${count}`}
 	bind:open={windowOpened}
 	class="flex flex-col gap-2 items-center justify-center p-8 px-16"
-	minWidthClass="min-w-fit"
-	minHeightClass="min-h-fit"
+	widthClass="w-fit"
 	isResizable={false}
 	isFullscreenable={false}
 >

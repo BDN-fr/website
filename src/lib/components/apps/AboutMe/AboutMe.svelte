@@ -1,8 +1,9 @@
 <script lang="ts">
 	import axios from 'axios';
-	import Icon from '../self/Desktop/Icon.svelte';
-	import Window from '../ui/Window.svelte';
+	import Icon from '../../self/Desktop/Icon.svelte';
+	import Window from '../../ui/Window.svelte';
 	import { onMount } from 'svelte';
+	import Projects from './Projects.svelte';
 
 	interface Props {
 		windowOpened?: boolean;
@@ -38,8 +39,7 @@
 	title="About Me"
 	bind:open={windowOpened}
 	isFullscreenable={true}
-	minWidthClass="min-w-[500px]"
-	maxWidthClass="max-w-[700px]"
+	widthClass="min-w-[500px] w-fit"
 	class="p-2 flex flex-col gap-2"
 >
 	<div class="flex gap-4">
@@ -87,5 +87,7 @@
 			</p>
 		</div>
 	</div>
-	I WILL ADD MORE THINGS, on this shitty website and on this app
+	<div>
+		<Projects />
+	</div>
 </Window>
