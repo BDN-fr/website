@@ -24,6 +24,6 @@
   </Project>
   <div>
     I will add more projects later <span class="text-xs text-shadow/50">maybe</span>,
-    you can still take a loot at my <Link href="https://github.com/BDN-fr">Github</Link>
+    you can still take a look at my <Link href="https://github.com/BDN-fr">Github</Link>
   </div>
 </Window>
