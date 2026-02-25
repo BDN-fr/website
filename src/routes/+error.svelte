@@ -10,11 +10,11 @@
 	isFullscreenable={false}
 	isClosable={false}
 	isResizable={false}
-	class="flex flex-col justify-center items-center p-4 gap-2"
+	class="flex flex-col p-4 gap-4"
 >
 	<div class="flex gap-2">
 		<span class="icon-[pixel--times-circle] bg-red-500 text-5xl"></span>
 		<h2>You encontered an error</h2>
 	</div>
-	<Button href="/">Return to the homepage</Button>
+	<Button href="/" class="self-end">Return to the homepage</Button>
 </Window>

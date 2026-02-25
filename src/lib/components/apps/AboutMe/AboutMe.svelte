@@ -71,7 +71,7 @@
 					>{discord?.username || "Couldn't load data from discord"}</span
 				>
 				{#if discord?.primary_guild}
-					<div class="ml-2 px-2 rounded-md inline-flex items-center gap-1.5 shadow shadow-shadow">
+					<div class="ml-2 px-2 rounded-md inline-flex items-center gap-1.5 shadow shadow-shadow h-8/10">
 						<img
 							src={`https://cdn.discordapp.com/clan-badges/${discord.primary_guild.identity_guild_id}/${discord.primary_guild.badge}.webp?size=16`}
 							alt="Tag badge"
