@@ -14,7 +14,7 @@
 	--color-accent: #ff9bd1;
 	--color-accent-content: black;
 	--color-shadow: #222222;
-	--color-selection: #5BCFFF;
+	--color-selection: #5bcfff;
 	--color-selection-content: black;
 
 	--titlebar-height: calc(var(--spacing) * 7); /* h-7 */

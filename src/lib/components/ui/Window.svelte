@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { topWindow } from '$lib/stores/TopWindow';
+	import { onMount, untrack } from 'svelte';
+	import { topWindow, count } from '$lib/stores/TopWindow';
 	import { isMobile } from '$lib/stores/IsMobile';
 
 	interface Props {
@@ -52,16 +52,14 @@
 
 	let element: HTMLDivElement | undefined = $state();
 
-	let isTopWindow = $state(false);
-
 	onMount(() => {
 		$effect(() => {
 			if (open) {
-				topWindow.set(uid);
+				untrack(() => topWindow.set(uid));
 			}
 		});
 		$effect(() => {
-			if (typeof element != 'undefined') {
+			if (element) {
 				if (isFullscreen) {
 					element.style.top = '0px';
 					element.style.left = '0px';
@@ -73,7 +71,11 @@
 		});
 
 		const unsubscribe = topWindow.subscribe((value) => {
-			isTopWindow = value === uid;
+			if (element) {
+				if (value === uid) {
+					element.style.zIndex = '' + $count;
+				}
+			}
 		});
 
 		return () => {
@@ -125,10 +127,7 @@
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		bind:this={element}
-		class={[
-			'fixed shadow-shadow/50 shadow-xl',
-			isTopWindow ? 'z-50' : 'z-10'
-		]}
+		class={['fixed shadow-shadow/50 shadow-xl']}
 		onmousedown={() => {
 			topWindow.set(uid);
 		}}
@@ -154,7 +153,7 @@
 				></button>
 			{/if}
 		</div>
-		<div class="h-(--titlebar-height) bg-red-500 w-full"></div>
+		<div class="h-(--titlebar-height) bg-accent w-full"></div>
 		<div
 			class={[
 				'bg-neutral text-neutral-content w-[calc(100lvw-50px)] max-h-[calc(calc(100lvh-var(--titlebar-height))-50px)] overflow-auto',
@@ -167,5 +166,10 @@
 		>
 			{@render children?.()}
 		</div>
+		<!-- TODO: Allow resising with all edges -->
+		<!-- <div class="absolute bg-red-500 w-[4px] top-0 h-full -left-[2px] cursor-w-resize"></div>
+		<div class="absolute bg-red-500 w-[4px] top-0 h-full -right-[2px] cursor-e-resize"></div>
+		<div class="absolute bg-red-500 h-[4px] -top-[2px] w-full left-0 cursor-n-resize"></div>
+		<div class="absolute bg-red-500 h-[4px] -bottom-[2px] w-full left-0 cursor-s-resize"></div> -->
 	</div>
 {/if}
