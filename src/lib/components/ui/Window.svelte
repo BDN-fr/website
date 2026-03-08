@@ -51,6 +51,13 @@
 	}
 
 	let element: HTMLDivElement | undefined = $state();
+	let content: HTMLDivElement | undefined = $state();
+	let titlebar: HTMLDivElement | undefined = $state();
+	let resizeDirection: string | null = $state(null);
+	let initialWidth = $state(0);
+	let initialHeight = $state(0);
+	let initialX = $state(0);
+	let initialY = $state(0);
 
 	onMount(() => {
 		$effect(() => {
@@ -83,9 +90,23 @@
 		};
 	});
 
+	function startResize(direction: string, event: MouseEvent) {
+		if (isFullscreen) return;
+		if (!content) return;
+
+		const rect = content.getBoundingClientRect();
+		drag = true;
+		initialWidth = rect.width;
+		initialHeight = rect.height;
+		initialX = event.x;
+		initialY = event.y;
+		resizeDirection = direction;
+	}
+
 	function mouseDown(event: MouseEvent) {
 		if (isFullscreen) return;
 		if (!element) return;
+
 		drag = true;
 		var rect = element.getBoundingClientRect();
 		yDiff = event.y - rect.y;
@@ -93,13 +114,87 @@
 	}
 
 	function move(event: MouseEvent) {
-		if (!drag) return;
-		mouseY = event.y;
-		mouseX = event.x;
+		if (!drag && !resizeDirection) return;
+
+		if (resizeDirection) {
+			const deltaX = event.x - initialX;
+			const deltaY = event.y - initialY;
+
+			if (content && element) {
+				let newWidth = initialWidth;
+				let newHeight = initialHeight;
+				let newLeft = left;
+				let newTop = top;
+
+				if (
+					resizeDirection === 'left' ||
+					resizeDirection === 'right' ||
+					resizeDirection === 'topleft' ||
+					resizeDirection === 'bottomleft' ||
+					resizeDirection === 'topright' ||
+					resizeDirection === 'bottomright'
+				) {
+					if (
+						resizeDirection === 'left' ||
+						resizeDirection === 'topleft' ||
+						resizeDirection === 'bottomleft'
+					) {
+						newWidth = initialWidth - deltaX;
+						newLeft = initialX + deltaX + scrollX;
+					} else {
+						newWidth = initialWidth + deltaX;
+					}
+
+					let oldRight = element.getBoundingClientRect().right;
+					content.style.width = newWidth + 'px';
+					let oldLeft = left;
+					left = newLeft;
+					let right = element.getBoundingClientRect().right;
+					if (right > oldLeft + newWidth) {
+						left = oldLeft + (oldRight - right);
+					}
+				}
+
+				if (
+					resizeDirection === 'top' ||
+					resizeDirection === 'bottom' ||
+					resizeDirection === 'topleft' ||
+					resizeDirection === 'topright' ||
+					resizeDirection === 'bottomleft' ||
+					resizeDirection === 'bottomright'
+				) {
+					if (
+						resizeDirection === 'top' ||
+						resizeDirection === 'topleft' ||
+						resizeDirection === 'topright'
+					) {
+						newHeight = initialHeight - deltaY;
+						newTop = initialY + deltaY + scrollY;
+					} else {
+						newHeight = initialHeight + deltaY;
+					}
+
+					let oldBottom = element.getBoundingClientRect().bottom;
+					content.style.height = newHeight + 'px';
+					let oldTop = top;
+					top = newTop;
+					let bottom = element.getBoundingClientRect().bottom;
+					if (
+						bottom >
+						oldTop + newHeight + (titlebar ? titlebar.getBoundingClientRect().height : 0)
+					) {
+						top = oldTop + (oldBottom - bottom);
+					}
+				}
+			}
+		} else {
+			mouseY = event.y;
+			mouseX = event.x;
+		}
 	}
 
 	function scroll(event: UIEvent) {
-		if (!drag) return;
+		if (!drag && !resizeDirection) return;
 		scrollY = window.scrollY;
 		scrollX = window.scrollX;
 	}
@@ -113,12 +208,18 @@
 		if (!isClosable) return;
 		open = false;
 	}
+
+	function resetResize() {
+		resizeDirection = null;
+		drag = false;
+	}
 </script>
 
 <svelte:window
 	onmousemove={move}
 	onmouseup={() => {
 		drag = false;
+		resetResize();
 	}}
 	onscroll={scroll}
 />
@@ -127,13 +228,14 @@
 	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div
 		bind:this={element}
-		class={['fixed shadow-shadow/50 shadow-xl']}
+		class={['fixed shadow-shadow/50 shadow-xl', drag ? 'select-none' : '']}
 		onmousedown={() => {
 			topWindow.set(uid);
 		}}
 	>
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
+			bind:this={titlebar}
 			onmousedown={mouseDown}
 			class="absolute bg-accent text-accent-content flex items-center px-2 gap-2 select-none w-full h-(--titlebar-height)"
 		>
@@ -155,9 +257,9 @@
 		</div>
 		<div class="h-(--titlebar-height) bg-accent w-full"></div>
 		<div
+			bind:this={content}
 			class={[
 				'bg-neutral text-neutral-content w-[calc(100lvw-50px)] max-h-[calc(calc(100lvh-var(--titlebar-height))-50px)] overflow-auto',
-				isResizable && !isFullscreen ? 'resize' : '',
 				isFullscreen ? 'min-w-lvw' : widthClass,
 				isFullscreen ? 'min-h-[calc(100lvh-var(--titlebar-height))]' : heightClass,
 				className
@@ -166,10 +268,39 @@
 		>
 			{@render children?.()}
 		</div>
-		<!-- TODO: Allow resising with all edges -->
-		<!-- <div class="absolute bg-red-500 w-[4px] top-0 h-full -left-[2px] cursor-w-resize"></div>
-		<div class="absolute bg-red-500 w-[4px] top-0 h-full -right-[2px] cursor-e-resize"></div>
-		<div class="absolute bg-red-500 h-[4px] -top-[2px] w-full left-0 cursor-n-resize"></div>
-		<div class="absolute bg-red-500 h-[4px] -bottom-[2px] w-full left-0 cursor-s-resize"></div> -->
+		{#if isResizable && !isFullscreen}
+			<div
+				class="absolute w-[8px] top-0 h-full -left-[4px] cursor-w-resize"
+				onmousedown={(e) => startResize('left', e)}
+			></div>
+			<div
+				class="absolute w-[8px] top-0 h-full -right-[4px] cursor-e-resize"
+				onmousedown={(e) => startResize('right', e)}
+			></div>
+			<div
+				class="absolute h-[8px] -top-[4px] w-full left-0 cursor-n-resize"
+				onmousedown={(e) => startResize('top', e)}
+			></div>
+			<div
+				class="absolute h-[8px] -bottom-[4px] w-full left-0 cursor-s-resize"
+				onmousedown={(e) => startResize('bottom', e)}
+			></div>
+			<div
+				class="absolute h-[8px] w-[8px] -top-[4px] -left-[4px] cursor-nw-resize"
+				onmousedown={(e) => startResize('topleft', e)}
+			></div>
+			<div
+				class="absolute h-[8px] w-[8px] -top-[4px] -right-[4px] cursor-ne-resize"
+				onmousedown={(e) => startResize('topright', e)}
+			></div>
+			<div
+				class="absolute h-[8px] w-[8px] -bottom-[4px] -left-[4px] cursor-sw-resize"
+				onmousedown={(e) => startResize('bottomleft', e)}
+			></div>
+			<div
+				class="absolute h-[8px] w-[8px] -bottom-[4px] -right-[4px] cursor-se-resize"
+				onmousedown={(e) => startResize('bottomright', e)}
+			></div>
+		{/if}
 	</div>
 {/if}
