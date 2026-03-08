@@ -150,7 +150,10 @@
 					let oldLeft = left;
 					left = newLeft;
 					let right = element.getBoundingClientRect().right;
-					if (right > oldLeft + newWidth) {
+					if (
+						right > oldLeft + newWidth
+						&& resizeDirection.includes('left')
+					) {
 						left = oldLeft + (oldRight - right);
 					}
 				}
@@ -179,9 +182,10 @@
 					let oldTop = top;
 					top = newTop;
 					let bottom = element.getBoundingClientRect().bottom;
+					let titlebarHeight = titlebar ? titlebar.getBoundingClientRect().height : 0;
 					if (
-						bottom >
-						oldTop + newHeight + (titlebar ? titlebar.getBoundingClientRect().height : 0)
+						bottom > oldTop + newHeight + titlebarHeight
+						&& resizeDirection.includes('top')
 					) {
 						top = oldTop + (oldBottom - bottom);
 					}
