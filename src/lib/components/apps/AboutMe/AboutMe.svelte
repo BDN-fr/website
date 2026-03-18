@@ -11,8 +11,8 @@
 		windowOpened?: boolean;
 	}
 	let { windowOpened = $bindable(false) }: Props = $props();
-	var bday = new Date('03/10/2008'); // You looked in the source code and foud my birth day, cool or... creepy
-	var today = new Date();
+	let bday = new Date('10/03/2008'); // You looked in the source code and foud my birth day, cool or... creepy
+	let today = new Date();
 	let age = new Date(today.getTime() - bday.getTime()).getFullYear() - new Date(0).getFullYear();
 	let discord: DiscordUser | undefined = $state();
 

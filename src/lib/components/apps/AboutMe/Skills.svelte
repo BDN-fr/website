@@ -11,4 +11,7 @@
 	}}>Skills</Button
 >
 
-<Window bind:open title="About Me | Skills">WIP</Window>
+<Window bind:open title="About Me | Skills" class="p-2 flex flex-col">
+	svelte, tailwind, react, python, lua, docker, mysql, js, github, html, git, vue, flask, fastapi, css, fivem <br>
+	or something like that (WIP)
+</Window>
