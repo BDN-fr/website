@@ -4,8 +4,13 @@
 	import Window from '$lib/components/ui/Window.svelte';
 </script>
 
+<svelte:head>
+	<title>{page.status} error lol</title>
+	<meta name="description" content="There is a problem with this link :(" />
+</svelte:head>
+
 <Window
-	title={'Error ' + page.status}
+	title="{page.status} error"
 	open={true}
 	isFullscreenable={false}
 	isClosable={false}
@@ -14,7 +19,7 @@
 >
 	<div class="flex gap-2">
 		<span class="icon-[pixel--times-circle] bg-red-500 text-5xl"></span>
-		<h2>You encontered an error</h2>
+		<h2>Nuhuh, there is a problem</h2>
 	</div>
 	<Button href="/" class="self-end">Return to the homepage</Button>
 </Window>

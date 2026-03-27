@@ -32,6 +32,7 @@
 	appName="About Me"
 	onOpen={() => {
 		windowOpened = true;
+		window.rybbit.event('About Me window');
 	}}
 >
 	<span class="icon-[pixel--user-solid]"></span>
@@ -42,12 +43,16 @@
 	bind:open={windowOpened}
 	isFullscreenable={true}
 	widthClass="min-w-[500px] w-fit"
-	class="p-2 flex flex-col gap-2"
+	class="p-2"
 >
 	<div class="flex gap-4">
 		{#if discord}
 			<div class="relative flex items-center flex-col">
 				<div class="size-[144px] flex items-center justify-center">
+					<div class="absolute text-center w-[120px]">
+						hi <br />
+						it's me !!!
+					</div>
 					<img
 						src={`https://cdn.discordapp.com/avatars/${discord.id}/${discord.avatar}?size=128'`}
 						alt="Avatar"

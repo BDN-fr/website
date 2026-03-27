@@ -16,13 +16,19 @@
 		60: 'Ok I got it you wont',
 		80: 'Are you expecting an easter egg ?',
 		85: 'Sorry no easter egg here',
-		100: 'Ok just go on, I give up'
+		100: 'Ok just go on, I give up',
+		10000: "Fuck you, here's your easter egg. NO MORE CLICKING FOR YOU!"
 	};
 
 	$effect(() => {
-		if (clickMessages.hasOwnProperty(count.toString())) {
+		let c = count.toString();
+		if (clickMessages.hasOwnProperty(c)) {
 			setTimeout(() => {
-				alert(clickMessages[count.toString()]);
+				window.rybbit.event('Clicker ' + c);
+				alert(clickMessages[c]);
+				if (c == '10000') {
+					windowOpened = false;
+				}
 			}, 0);
 		}
 	});
@@ -31,7 +37,9 @@
 <Icon
 	appName="Clicker"
 	onOpen={() => {
+		if (count >= 10000) return;
 		windowOpened = true;
+		window.rybbit.event('Clicker window');
 	}}
 >
 	<span class="icon-[pixel--trending-solid]"></span>

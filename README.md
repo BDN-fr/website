@@ -23,3 +23,7 @@ Use the [Dockerfile](/Dockerfile) blud
 
 - change scrollbar style
 - add like the whole head like the title description and so on
+
+## Credits:
+
+Wallpaper: dryam, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons

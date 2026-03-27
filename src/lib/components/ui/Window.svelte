@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount, untrack } from 'svelte';
+	import type { Attachment } from 'svelte/attachments';
 	import { topWindow, count } from '$lib/stores/TopWindow';
 	import { isMobile } from '$lib/stores/IsMobile';
 
@@ -90,6 +91,14 @@
 		};
 	});
 
+	const fixSize: Attachment = (el) => {
+		if (content) {
+			let rect = content.getBoundingClientRect();
+			content.style.width = rect.width + 'px';
+			content.style.height = rect.height + 'px';
+		}
+	};
+
 	function startResize(direction: string, event: MouseEvent) {
 		if (isFullscreen) return;
 		if (!content) return;
@@ -150,10 +159,7 @@
 					let oldLeft = left;
 					left = newLeft;
 					let right = element.getBoundingClientRect().right;
-					if (
-						right > oldLeft + newWidth
-						&& resizeDirection.includes('left')
-					) {
+					if (right > oldLeft + newWidth && resizeDirection.includes('left')) {
 						left = oldLeft + (oldRight - right);
 					}
 				}
@@ -183,10 +189,7 @@
 					top = newTop;
 					let bottom = element.getBoundingClientRect().bottom;
 					let titlebarHeight = titlebar ? titlebar.getBoundingClientRect().height : 0;
-					if (
-						bottom > oldTop + newHeight + titlebarHeight
-						&& resizeDirection.includes('top')
-					) {
+					if (bottom > oldTop + newHeight + titlebarHeight && resizeDirection.includes('top')) {
 						top = oldTop + (oldBottom - bottom);
 					}
 				}
@@ -262,6 +265,7 @@
 		<div class="h-(--titlebar-height) bg-accent w-full"></div>
 		<div
 			bind:this={content}
+			{@attach fixSize}
 			class={[
 				'bg-neutral text-neutral-content w-[calc(100lvw-50px)] max-h-[calc(calc(100lvh-var(--titlebar-height))-50px)] overflow-auto',
 				isFullscreen ? 'min-w-lvw' : widthClass,

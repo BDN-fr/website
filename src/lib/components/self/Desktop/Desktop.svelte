@@ -17,6 +17,7 @@
 <div
 	class={[
 		'min-w-svw max-w-lvw min-h-svh max-h-lvh gap-4 p-4 flex flex-wrap place-content-start',
+		'wallpaper',
 		$isMobile ? 'flex-row self-center' : 'flex-col'
 	]}
 >
@@ -25,3 +26,13 @@
 	<Clicker />
 	<Github />
 </div>
+
+<style>
+	.wallpaper {
+		background-image: url('/wallpaper.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-clip: border-box;
+		background-position: center;
+	}
+</style>

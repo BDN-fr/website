@@ -12,6 +12,7 @@
 <Button
 	onclick={() => {
 		open = true;
+		window.rybbit.event('About Me Projects window');
 	}}>Projects</Button
 >
 

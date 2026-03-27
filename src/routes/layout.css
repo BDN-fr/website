@@ -52,6 +52,14 @@
 	color: var(--color-selection-content);
 }
 
+@utility text-outline-* {
+	text-shadow:
+		-1px 0px 0 --value(--color-*),
+		0px -1px 0 --value(--color-*),
+		1px 0px 0 --value(--color-*),
+		0px 1px 0 --value(--color-*);
+}
+
 /* * {
 	line-height: 100%
 } */

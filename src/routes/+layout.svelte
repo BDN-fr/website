@@ -1,8 +1,17 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.png';
+	import { onMount } from 'svelte';
 
 	let { children } = $props();
+
+	onMount(() => {
+		console.log(
+			"Hi there ! You're searching things arn't you ?\n" +
+				'Have fun with the developper console, you can also check the source code on github: https://github.com/BDN-fr/website\n' +
+				'See ya :3'
+		);
+	});
 </script>
 
 <svelte:head>

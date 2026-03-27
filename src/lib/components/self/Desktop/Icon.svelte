@@ -17,7 +17,7 @@
 
 <div class={['relative', $isMobile ? 'w-18 h-24' : 'w-24 h-18']}>
 	<button
-		class="group w-full h-fit hover:bg-neutral/10 focus:bg-neutral/30 flex flex-col items-center justify-center absolute"
+		class="group w-full h-fit hover:bg-shadow/10 focus:bg-shadow/20 flex flex-col items-center justify-center absolute"
 		onclick={(e) => $isMobile && click(e)}
 		ondblclick={(e) => !$isMobile && click(e)}
 	>
@@ -28,7 +28,7 @@
 			{@render children?.()}
 		</div>
 		<h2
-			class="not-group-focus:truncate max-w-full shrink z-1 text-white text-shadow-shadow select-none"
+			class="not-group-focus:truncate max-w-full shrink z-1 text-white select-none text-outline-shadow"
 		>
 			{appName}
 		</h2>
