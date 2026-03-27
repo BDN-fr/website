@@ -16,6 +16,11 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<script
+		defer
+		src="https://analytics.bdn-fr.xyz/script.js"
+		data-website-id="1b262083-0f6a-441f-a438-03ceef09e39a"
+	></script>
 </svelte:head>
 
 <div
