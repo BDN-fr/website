@@ -7,7 +7,7 @@ let user: object | undefined;
 let lastFetch: Date | undefined;
 const maxTime = 3 * 60 * 60 * 1000; // 3 hours
 
-// No error handling bcp i'm lazy
+// No error handling bc i'm lazy
 async function getDiscordUser() {
 	const options = {
 		method: 'GET',
