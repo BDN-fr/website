@@ -1,13 +1,25 @@
 <script>
 	import { page } from '$app/state';
-	import Link from '$lib/components/ui/Link.svelte';
-	import { m } from '$lib/paraglide/messages';
+	import Button from '$lib/components/ui/Button.svelte';
+	import Window from '$lib/components/ui/Window.svelte';
 </script>
 
-<main class="flex flex-col items-center justify-center text-center">
-	<h1 class="text-6xl text-red-500">{page.status}</h1>
-	<p>
-		{m.error()}<br />
-		<Link href="/" principal={true}>{m.error_homepage()}</Link>
-	</p>
-</main>
+<svelte:head>
+	<title>{page.status} error lol</title>
+	<meta name="description" content="There is a problem with this link :(" />
+</svelte:head>
+
+<Window
+	title="{page.status} error"
+	open={true}
+	isFullscreenable={false}
+	isClosable={false}
+	isResizable={false}
+	class="flex flex-col p-4 gap-4"
+>
+	<div class="flex gap-2">
+		<span class="icon-[pixel--times-circle] bg-red-500 text-5xl"></span>
+		<h2>Nuhuh, there is a problem</h2>
+	</div>
+	<Button href="/" class="self-end">Return to the homepage</Button>
+</Window>

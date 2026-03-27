@@ -1,20 +1,29 @@
-My website built with sveltekit and tailwind
+Built with sveltekit, tailwindcss, bits-ui, iconify and docker
 
-# LICENSE
-Under AGPL-3.0 License, see [LICENSE](./LICENSE)
+## dev:
 
-    BDN_fr's website, a website / portfolio
-    Copyright (C) 2025  BDN_fr
+clone the repository and install nodejs if you don't have it
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of the
-    License, or (at your option) any later version.
+```bash
+pnpm i
+pnpm dev
+```
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
+before committing
 
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+```bash
+pnpm format
+```
+
+## deploy:
+
+Use the [Dockerfile](/Dockerfile) blud
+
+## todo:
+
+- change scrollbar style
+- add like the whole head like the title description and so on
+
+## Credits:
+
+Wallpaper: dryam, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons

@@ -1,18 +1,23 @@
 <script lang="ts">
-	interface Props {
-		children: any;
-		newTab?: boolean;
-		principal?: boolean;
-		href: string;
-	}
+	import type { Snippet } from 'svelte';
 
-	let { children, newTab = false, principal = false, href }: Props = $props();
+	interface Props {
+		children: Snippet;
+		href?: string;
+		class?: string;
+		newTab?: boolean;
+	}
+	let { children, href, class: className, newTab = true, ...rest }: Props = $props();
 </script>
 
 <a
+	{...rest}
 	{href}
+	class={[
+		'decoration-accent underline underline-offset-2 decoration-2 hover:bg-selection hover:no-underline',
+		className
+	]}
 	target={newTab ? '_blank' : '_self'}
-	class="underline decoration-2 hover:underline-offset-3 {principal
-		? 'decoration-c-blue-200'
-		: ''} hover:decoration-c-pink-200">{@render children?.()}</a
 >
+	{@render children()}
+</a>
