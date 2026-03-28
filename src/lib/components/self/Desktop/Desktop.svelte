@@ -3,6 +3,7 @@
 	import ChangeMode from '$lib/components/apps/ChangeMode.svelte';
 	import Clicker from '$lib/components/apps/Clicker.svelte';
 	import Github from '$lib/components/apps/Github.svelte';
+	import Jeremy from '$lib/components/apps/Jeremy.svelte';
 	import { isMobile } from '$lib/stores/IsMobile';
 	import { onMount } from 'svelte';
 	onMount(() => {
@@ -24,6 +25,7 @@
 	<!-- <ChangeMode /> -->
 	<AboutMe />
 	<Clicker />
+	<Jeremy />
 	<Github />
 </div>
 
