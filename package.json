@@ -14,25 +14,25 @@
 		"lint": "prettier --check ."
 	},
 	"devDependencies": {
-		"@iconify/json": "^2.2.455",
+		"@iconify/json": "^2.2.471",
 		"@iconify/tailwind4": "^1.2.3",
 		"@sveltejs/adapter-node": "^5.5.4",
 		"@sveltejs/enhanced-img": "^0.10.4",
-		"@sveltejs/kit": "^2.55.0",
+		"@sveltejs/kit": "^2.59.1",
 		"@sveltejs/vite-plugin-svelte": "^6.2.4",
-		"@tailwindcss/vite": "^4.2.2",
-		"bits-ui": "^2.16.3",
-		"prettier": "^3.8.1",
-		"prettier-plugin-svelte": "^3.5.1",
-		"prettier-plugin-tailwindcss": "^0.7.2",
-		"svelte": "^5.55.0",
-		"svelte-check": "^4.4.5",
-		"tailwindcss": "^4.2.2",
+		"@tailwindcss/vite": "^4.3.0",
+		"bits-ui": "^2.18.1",
+		"prettier": "^3.8.3",
+		"prettier-plugin-svelte": "^3.5.2",
+		"prettier-plugin-tailwindcss": "^0.7.4",
+		"svelte": "^5.55.5",
+		"svelte-check": "^4.4.8",
+		"tailwindcss": "^4.3.0",
 		"typescript": "^5.9.3",
-		"vite": "^7.3.2",
+		"vite": "^7.3.3",
 		"vite-plugin-devtools-json": "^1.0.0"
 	},
 	"dependencies": {
-		"axios": "^1.15.0"
+		"axios": "^1.16.0"
 	}
 }

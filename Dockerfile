@@ -2,6 +2,7 @@ FROM node:25-alpine AS builder
 WORKDIR /app
 COPY package*.json .
 COPY pnpm-lock.yaml .
+COPY pnpm-workspace.yaml .
 RUN npm i -g pnpm
 RUN pnpm i
 COPY . .
