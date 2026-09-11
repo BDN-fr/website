@@ -11,6 +11,6 @@ export const handle: Handle = async ({ event, resolve }) => {
 	return new Response(
 		"\x1b[2J\x1b[H"+
 		"Hmmm so you're using curl, interesting...\n"+
-		"What are you searching?"
+		"What are you searching?\n"
 	)
 };
