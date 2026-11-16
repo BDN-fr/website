@@ -1,11 +1,11 @@
 <script>
-	import Project from '$lib/components/self/Project.svelte';
-	import Button from '$lib/components/ui/Button.svelte';
-	import Window from '$lib/components/ui/Window.svelte';
-	import Link from '$lib/components/ui/Link.svelte';
+	import Project from '#lib/components/self/Project.svelte';
+	import Button from '#lib/components/ui/Button.svelte';
+	import Window from '#lib/components/ui/Window.svelte';
+	import Link from '#lib/components/ui/Link.svelte';
 
-	import lbxImg from '$lib/assets/LBX.svg?enhanced';
-	import elleviaImg from '$lib/assets/ellevia.png?enhanced';
+	import lbxImg from '#lib/assets/LBX.svg?enhanced';
+	import elleviaImg from '#lib/assets/ellevia.png?enhanced';
 	let open = $state(false);
 </script>
 

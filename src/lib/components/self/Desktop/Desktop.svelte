@@ -1,10 +1,10 @@
 <script lang="ts">
-	import AboutMe from '$lib/components/apps/AboutMe/AboutMe.svelte';
-	import ChangeMode from '$lib/components/apps/ChangeMode.svelte';
-	import Clicker from '$lib/components/apps/Clicker.svelte';
-	import Github from '$lib/components/apps/Github.svelte';
-	import Jeremy from '$lib/components/apps/Jeremy.svelte';
-	import { isMobile } from '$lib/stores/IsMobile';
+	import AboutMe from '#lib/components/apps/AboutMe/AboutMe.svelte';
+	import ChangeMode from '#lib/components/apps/ChangeMode.svelte';
+	import Clicker from '#lib/components/apps/Clicker.svelte';
+	import Github from '#lib/components/apps/Github.svelte';
+	import Jeremy from '#lib/components/apps/Jeremy.svelte';
+	import { isMobile } from '#lib/stores/IsMobile';
 	import { onMount } from 'svelte';
 	onMount(() => {
 		if (!(localStorage.getItem('sawHelpMessage') == 'true')) {

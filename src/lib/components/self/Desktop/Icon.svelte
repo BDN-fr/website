@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isMobile } from '$lib/stores/IsMobile';
+	import { isMobile } from '#lib/stores/IsMobile';
 	import type { Snippet } from 'svelte';
 
 	interface Props {

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount, untrack } from 'svelte';
 	import type { Attachment } from 'svelte/attachments';
-	import { topWindow, count } from '$lib/stores/TopWindow';
-	import { isMobile } from '$lib/stores/IsMobile';
+	import { topWindow, count } from '#lib/stores/TopWindow';
+	import { isMobile } from '#lib/stores/IsMobile';
 
 	interface Props {
 		title: string;

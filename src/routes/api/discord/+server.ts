@@ -1,4 +1,4 @@
-import { env } from '$env/dynamic/private';
+import { PRIVATE_DISCORD_TOKEN } from '$app/env/private';
 import { json } from '@sveltejs/kit';
 import axios from 'axios';
 import type { RequestHandler } from './$types.js';
@@ -12,9 +12,7 @@ async function getDiscordUser() {
 	const options = {
 		method: 'GET',
 		url: 'https://discord.com/api/v10/users/704593833421438996',
-		headers: {
-			Authorization: 'Bot ' + env.PRIVATE_DISCORD_TOKEN
-		}
+		headers: { Authorization: 'Bot ' + PRIVATE_DISCORD_TOKEN }
 	};
 
 	try {
@@ -31,7 +29,6 @@ export const GET: RequestHandler = async ({ url }) => {
 	if (lastFetch == undefined || date.getTime() - lastFetch.getTime() > maxTime) {
 		user = await getDiscordUser();
 	}
-	return json({
-		user: user
-	});
+
+	return json({ user });
 };

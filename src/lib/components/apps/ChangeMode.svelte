@@ -1,5 +1,5 @@
 <script>
-	import { isMobile } from '$lib/stores/IsMobile';
+	import { isMobile } from '#lib/stores/IsMobile';
 	import Icon from '../self/Desktop/Icon.svelte';
 	let mobile = $state($isMobile);
 	isMobile.subscribe((val) => {
