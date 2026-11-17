@@ -3,6 +3,7 @@
 	import favicon from '#lib/assets/favicon.png';
 	import { onMount } from 'svelte';
 	import { PUBLIC_UMAMI_SCRIPT } from '$app/env/public';
+	import { PUBLIC_UMAMI_RECORD_SCRIPT } from '$app/env/public';
 	import { PUBLIC_UMAMI_ID } from '$app/env/public';
 
 	let { children } = $props();
@@ -17,7 +18,8 @@
 </script>
 
 <svelte:head>
-	<script defer src="{PUBLIC_UMAMI_SCRIPT}" data-website-id="{PUBLIC_UMAMI_ID}"></script>
+	<script defer src="{PUBLIC_UMAMI_SCRIPT}" data-website-id="{PUBLIC_UMAMI_ID}" data-performance="true"></script>
+	<script defer src="{PUBLIC_UMAMI_RECORD_SCRIPT}" data-website-id="{PUBLIC_UMAMI_ID}"></script>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
