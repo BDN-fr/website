@@ -2,7 +2,7 @@
 	import Icon from '../self/Desktop/Icon.svelte';
 
 	function onOpen() {
-		window.rybbit.event('Github link');
+		umami.track('Github link');
 		window.open('https://github.com/BDN-fr/website', 'about:blank');
 	}
 </script>

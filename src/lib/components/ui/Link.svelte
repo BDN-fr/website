@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
 	interface Props {
 		children: Snippet;
@@ -7,7 +8,7 @@
 		class?: string;
 		newTab?: boolean;
 	}
-	let { children, href, class: className, newTab = true, ...rest }: Props = $props();
+	let { children, href, class: className, newTab = true, ...rest }: HTMLAnchorAttributes & Props = $props();
 </script>
 
 <a

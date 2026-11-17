@@ -32,7 +32,7 @@
 	appName="About Me"
 	onOpen={() => {
 		windowOpened = true;
-		window.rybbit.event('About Me window');
+		umami.track('About Me window');
 	}}
 >
 	<span class="icon-[pixel--user-solid]"></span>

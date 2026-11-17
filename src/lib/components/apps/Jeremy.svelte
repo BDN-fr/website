@@ -15,6 +15,7 @@
 	appName="Jeremy"
 	onOpen={() => {
 		open = true;
+		umami.track('Jeremy window');
 	}}
 >
 	<img src="/jerem.gif" alt="Jeremy" />

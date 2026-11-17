@@ -8,7 +8,7 @@
 <Button
 	onclick={() => {
 		open = true;
-		window.rybbit.event('About Me Skills window');
+		umami.track('About Me Skills window');
 	}}>Skills</Button
 >
 

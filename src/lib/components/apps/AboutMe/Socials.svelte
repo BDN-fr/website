@@ -9,13 +9,13 @@
 <Button
 	onclick={() => {
 		open = true;
-		window.rybbit.event('About Me Socials window');
+		umami.track('About Me Socials window');
 	}}>Socials</Button
 >
 
 {#snippet social(icon: string, link: string, name: string)}
 	<div>
-		<Link href={link} class="flex flex-col w-fit h-fit justify-center items-center"
+		<Link href={link} data-umami-event="Social {name}" class="flex flex-col w-fit h-fit justify-center items-center"
 			><span class="{icon} size-8"></span> {name}</Link
 		>
 	</div>

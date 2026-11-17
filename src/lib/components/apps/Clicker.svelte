@@ -24,7 +24,7 @@
 		let c = count.toString();
 		if (clickMessages.hasOwnProperty(c)) {
 			setTimeout(() => {
-				window.rybbit.event('Clicker ' + c);
+				umami.track('Clicker', {count: count});
 				alert(clickMessages[c]);
 				if (c == '10000') {
 					windowOpened = false;
@@ -39,7 +39,7 @@
 	onOpen={() => {
 		if (count >= 10000) return;
 		windowOpened = true;
-		window.rybbit.event('Clicker window');
+		umami.track('Clicker window');
 	}}
 >
 	<span class="icon-[pixel--trending-solid]"></span>

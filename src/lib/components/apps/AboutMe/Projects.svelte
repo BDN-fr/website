@@ -12,7 +12,7 @@
 <Button
 	onclick={() => {
 		open = true;
-		window.rybbit.event('About Me Projects window');
+		umami.track('About Me Projects window');
 	}}>Projects</Button
 >
 
